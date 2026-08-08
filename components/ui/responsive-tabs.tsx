@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 
 interface TabItem {
@@ -23,12 +23,14 @@ interface ResponsiveTabsProps {
   items: TabItem[];
   defaultValue?: string;
   className?: string;
+  tabsListClassName?: string;
 }
 
 export function ResponsiveTabs({
   items,
   defaultValue,
   className,
+  tabsListClassName = "grid-cols-3",
 }: ResponsiveTabsProps) {
   const [activeTab, setActiveTab] = React.useState(
     defaultValue || items[0]?.value
@@ -66,18 +68,16 @@ export function ResponsiveTabs({
       {/* Desktop: Tabs */}
       <div className="hidden md:block">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className={cn("grid w-full", tabsListClassName)}>
             {items.map((item) => (
               <TabsTrigger key={item.value} value={item.value}>
                 {item.label}
               </TabsTrigger>
             ))}
           </TabsList>
-          {items.map((item) => (
-            <TabsContent key={item.value} value={item.value}>
-              {item.content}
-            </TabsContent>
-          ))}
+          <div key={activeTab} className="mt-2">
+            {activeItem?.content}
+          </div>
         </Tabs>
       </div>
 

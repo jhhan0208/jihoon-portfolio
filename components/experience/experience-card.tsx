@@ -7,22 +7,7 @@ import React from "react";
 import { Icons } from "@/components/common/icons";
 import { Button } from "@/components/ui/button";
 import { ExperienceInterface } from "@/config/experience";
-
-// Helper function to extract year from date
-const getYearFromDate = (date: Date): string => {
-  return new Date(date).getFullYear().toString();
-};
-
-// Helper function to get duration text
-const getDurationText = (
-  startDate: Date,
-  endDate: Date | "Present"
-): string => {
-  const startYear = getYearFromDate(startDate);
-  const endYear =
-    typeof endDate === "string" ? "Present" : getYearFromDate(endDate);
-  return `${startYear} - ${endYear}`;
-};
+import { getExperienceDurationText } from "@/lib/utils";
 
 interface ExperienceCardProps {
   experience: ExperienceInterface;
@@ -36,7 +21,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border-2 border-border overflow-hidden bg-white flex-shrink-0">
             <Image
               src={experience.logo}
-              alt={experience.company}
+              alt={experience.company ?? experience.position}
               width={48}
               height={48}
               className="w-full h-full object-contain p-2"
@@ -60,14 +45,25 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
                 </a>
               )}
             </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-muted-foreground">
-              <span className="font-medium">{experience.company}</span>
-              <span className="hidden sm:inline">•</span>
-              <span>{experience.location}</span>
+            <div className="min-h-5 flex items-center">
+              {(experience.company || experience.location) && (
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-muted-foreground">
+                  {experience.company && (
+                    <span className="font-medium">{experience.company}</span>
+                  )}
+                  {experience.company && experience.location && (
+                    <span className="hidden sm:inline">•</span>
+                  )}
+                  {experience.location && <span>{experience.location}</span>}
+                </div>
+              )}
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
-                {getDurationText(experience.startDate, experience.endDate)}
+                {getExperienceDurationText(
+                  experience.startDate,
+                  experience.endDate
+                )}
               </span>
             </div>
           </div>

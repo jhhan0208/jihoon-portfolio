@@ -60,7 +60,22 @@ export type ValidSkills =
   | "FastAPI"
   | "SQL"
   | "NoSQL"
-  | "Framer Motion";
+  | "Framer Motion"
+  // 추가
+  | "Whisper"
+  | "FastText"
+  | "LangChain"
+  | "Chroma"
+  | "Airflow"
+  | "BigQuery"
+  | "Cloud Composer"
+  | "Cloud Storage"
+  | "Looker Studio"
+  | "Tableau"
+  | "Chrome Extension"
+  | "Selenium"
+  | "KcELECTRA"
+  | "Hugging Face";
 
 export type ValidCategory =
   | "Full Stack"
@@ -69,9 +84,26 @@ export type ValidCategory =
   | "UI/UX"
   | "Web Dev"
   | "Mobile Dev"
-  | "3D Modeling";
+  | "3D Modeling"
+  // 추가
+  | "AI"
+  | "Speech Recognition"
+  | "Web Service"
+  | "Accessibility"
+  | "Developer Tool"
+  | "LLM"
+  | "RAG"
+  | "NLP"
+  | "Chrome Extension";
 
 export type ValidExpType = "Personal" | "Professional";
+
+export type ValidExperienceType =
+  | "Intern"
+  | "Project"
+  | "Experience"
+  | "Award"
+  | "Publication";
 
 export type ValidPages =
   | "home"

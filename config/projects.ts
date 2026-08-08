@@ -1,4 +1,5 @@
 import { ValidCategory, ValidExpType, ValidSkills } from "./constants";
+import { ContentBlock } from "./content-blocks";
 
 interface PagesInfoInterface {
   title: string;
@@ -25,570 +26,981 @@ export interface ProjectInterface {
   companyLogoImg: any;
   descriptionDetails: DescriptionDetailsInterface;
   pagesInfoArr: PagesInfoInterface[];
+  detailBlocks?: ContentBlock[];
 }
 
 export const Projects: ProjectInterface[] = [
+  // termcorrector
   {
-    id: "portfolio-template",
-    companyName: "Portfolio Website (130+ GitHub stars)",
-    type: "Personal",
-    category: ["Web Dev", "Frontend", "UI/UX"],
-    shortDescription:
-      "Open-source Next.js portfolio template recognized and forked by developers worldwide, optimized for SEO/AEO and performance.",
-    websiteLink: "https://nbarkiya.xyz",
-    githubLink: "https://github.com/namanbarkiya/minimal-next-portfolio",
-    techStack: [
-      "Next.js",
-      "React",
-      "Typescript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Vercel",
-    ],
-    startDate: new Date("2024-01-01"),
-    endDate: new Date("2025-12-01"),
-    companyLogoImg: "/projects/portfolio/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Landing & Sections",
-        description:
-          "A clean, minimal landing page with sections for skills, projects, contributions, and experience.",
-        imgArr: ["/profile-img.jpg"],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "I created an open-source Next.js portfolio template to help developers ship a modern, responsive portfolio quickly.",
-        "The project focuses heavily on performance, clean typography, and strong SEO/AEO foundations, and it has been adopted and forked by developers globally.",
-      ],
-      bullets: [
-        "Created an open-source Next.js portfolio template recognized and forked by developers worldwide.",
-        "Ranked #1 on ChatGPT search for “best Next.js portfolio template GitHub” through AEO/GEO optimization.",
-        "Maintained a fast, responsive UI with a minimal, themeable design system.",
-      ],
-    },
-  },
-  {
-    id: "convot",
-    companyName: "Convot",
-    type: "Personal",
-    category: ["Full Stack", "Backend", "Web Dev"],
-    shortDescription:
-      "Production-ready AI chatbot platform that crawls, indexes, and embeds knowledge from PDFs/URLs/text to deliver source-grounded answers via a one-line widget.",
-    techStack: ["Next.js", "React", "Node.js", "Typescript", "Python"],
-    startDate: new Date("2024-04-01"),
-    endDate: new Date("2024-10-01"),
-    companyLogoImg: "/projects/convot/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Ingestion & Retrieval",
-        description:
-          "Designed ingestion and retrieval pipelines supporting multiple content sources with secure tenant isolation.",
-        imgArr: ["/logo.png"],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "Convot is a production-ready AI chatbot platform designed to be embedded on any website with a single line widget.",
-        "It supports crawling and indexing knowledge from PDFs, URLs, and plain text, and it returns context-aware, source-grounded answers with integrated analytics.",
-      ],
-      bullets: [
-        "Built a production-ready AI chatbot platform with integrated analytics and a one-line embed widget.",
-        "Designed ingestion and retrieval pipelines to support multiple sources (PDFs, URLs, text) with tenant isolation.",
-        "Focused on reliability, security, and traceable answers by grounding responses in retrieved sources.",
-      ],
-    },
-  },
-  {
-    id: "niya-saas-template",
-    companyName: "Niya SaaS Template (30+ GitHub stars)",
-    type: "Personal",
-    category: ["Full Stack", "Web Dev", "UI/UX"],
-    shortDescription:
-      "Production-ready Next.js 15 template for developers and AI startups. Includes authentication, state management, beautiful UI components, and everything needed to build scalable SaaS applications.",
-    websiteLink: "https://niya.nbarkiya.xyz",
-    githubLink: "https://github.com/namanbarkiya/niya-saas-template",
-    techStack: ["Next.js", "React", "Typescript", "Supabase", "Tailwind CSS"],
-    startDate: new Date("2024-08-01"),
-    endDate: new Date("2025-01-01"),
-    companyLogoImg: "/projects/niya/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Landing Page",
-        description:
-          "Modern landing page showcasing the template features, tech stack, and pricing options.",
-        imgArr: ["/logo.png"],
-      },
-      {
-        title: "Authentication System",
-        description:
-          "Complete authentication system with Supabase, protected routes, and role-based access control.",
-        imgArr: ["/logo.png"],
-      },
-      {
-        title: "Dashboard & Components",
-        description:
-          "Beautiful UI components with Magic UI, Radix primitives, and comprehensive dashboard templates.",
-        imgArr: ["/logo.png"],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "Niya is a production-ready Next.js 15 template designed for developers and AI startups. Built with modern best practices, it includes everything needed to build scalable SaaS applications.",
-        "The template features a complete authentication system with Supabase, beautiful UI components with Magic UI and Radix primitives, state management with Zustand and React Query, and full TypeScript support with Zod validation.",
-        "It's optimized for performance, includes SEO-friendly metadata, and provides a solid foundation for rapid prototyping and production deployment.",
-      ],
-      bullets: [
-        "Created a production-ready Next.js 15 template with complete authentication system and protected routes.",
-        "Integrated Supabase for database, authentication, and real-time features with full TypeScript support.",
-        "Built comprehensive UI component library with Magic UI, Radix primitives, and Tailwind CSS styling.",
-        "Implemented state management with Zustand for client state and React Query for server state management.",
-        "Designed for developers and AI startups with all essential features to start building SaaS products.",
-        "Achieved 30+ GitHub stars and recognition as a comprehensive starter template for modern web applications.",
-      ],
-    },
-  },
-  {
-    id: "portfolio-card",
-    companyName: "Portfolio Card",
-    type: "Personal",
-    category: ["Web Dev", "Frontend", "3D Modeling"],
-    shortDescription:
-      "Forged an immersive 3D Portfolio Card utilizing the prowess of Three.js and Blender, where art and technology converge in an interactive masterpiece.",
-    websiteLink: "https://card.namanbarkiya.xyz/",
-    githubLink: "https://github.com/namanbarkiya/3d-portfolio-card",
-    techStack: ["React", "Javascript", "HTML 5", "CSS 3"],
-    startDate: new Date("2022-03-01"),
-    endDate: new Date("2022-07-01"),
-    companyLogoImg: "/projects/card/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Card Views",
-        description: "Front and back views of the interactive 3D card",
-        imgArr: ["/projects/card/card_2.webp", "/projects/card/card_3.webp"],
-      },
-      {
-        title: "Interactive Elements",
-        description:
-          "Custom links embedded in the 3D model with interactive animations",
-        imgArr: ["/projects/card/card_1.webp"],
-      },
-      {
-        title: "3D Model Development",
-        description: "Blender project showcasing the model creation process",
-        imgArr: ["/projects/card/card_4.webp"],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "In my personal, I've ventured into the world of creativity, fashioning a distinctive portfolio card through the utilization of Three.js.",
-        "This portfolio card transcends convention; it emerges as a captivating 3D model, adorned with meticulous lighting arrangements that conjure a spellbinding visual journey.",
-        "To materialize this concept, I've harnessed the combined potential of Three.js and Blender, orchestrating a meticulous crafting of the central 3D model that serves as the cornerstone of the card's allure.",
-        "Yet, the allure extends beyond aesthetics. I've ingeniously interwoven custom links directly into the fabric of Three.js components. Through the creation and seamless integration of novel components, these additions elegantly rest upon the card's surface, mirroring its rotations and delivering an interactive dimension to my portfolio.",
-        "The portfolio card itself is an opus of motion, perpetually swaying in an auto-rotational dance that unfurls its multifaceted essence. As an enhancement, I've introduced an instinctive user interaction element. A simple, intuitive drag of the card in specific directions grants viewers a comprehensive vantage, enabling exploration from every conceivable angle.",
-        "At its core, my personal epitomizes technical finesse, artistic expression, and interactive design. The amalgamation of Three.js, Blender's prowess, and the innovation of component integration has birthed not only a portfolio card, but a dynamic encounter leaving an indelible imprint on all who partake.",
-      ],
-      bullets: [
-        "Conceptualized and realized a distinct portfolio card using Three.js, highlighting creative exploration.",
-        "Crafted a mesmerizing 3D model enhanced by thoughtful lighting arrangements, resulting in a captivating visual voyage.",
-        "Leveraged the synergy of Three.js and Blender to meticulously sculpt and refine the central 3D model, embodying meticulous attention to detail.",
-        "Innovatively integrated custom links within Three.js components, introducing an interactive layer via seamlessly incorporated new elements.",
-        "Enabled an auto-rotating feature for the portfolio card, perpetually showcasing its various facets to observers.",
-        "Introduced an instinctual user interaction mechanism, allowing viewers to comprehensively explore the card's dimensions through simple, intuitive dragging motions.",
-        "Represented a fusion of technical prowess, artistic ingenuity, and interactive design in a project that reshapes the boundaries of conventional portfolio representation.",
-      ],
-    },
-  },
-  {
-    id: "the-super-focus",
-    companyName: "TheSuperFocus",
-    type: "Personal",
-    category: ["Full Stack", "Web Dev", "UI/UX"],
-    shortDescription:
-      "Pomodoro-inspired productivity web app with real-time sessions and recurring payments.",
-    techStack: [
-      "Next.js",
-      "React",
-      "Node.js",
-      "Socket.io",
-      "Typescript",
-      "MongoDB",
-    ],
-    startDate: new Date("2023-06-01"),
-    endDate: new Date("2023-12-01"),
-    companyLogoImg: "/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Realtime Focus Sessions",
-        description:
-          "Built real-time focus sessions using sockets to help people stay accountable and productive.",
-        imgArr: ["/logo.png"],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "TheSuperFocus is a productivity web app inspired by the Pomodoro technique, built to help users stay focused and complete deep-work sessions.",
-        "It includes real-time session support and a paid tier with recurring billing.",
-      ],
-      bullets: [
-        "Built a Pomodoro-inspired productivity web app using real-time sockets.",
-        "Integrated Razorpay for recurring payments, securing 10+ premium users.",
-      ],
-    },
-  },
-  {
-    id: "built-design",
-    companyName: "Builtdesign",
+    id: "termcorrector",
+    companyName: "TermCorrector",
     type: "Professional",
-    category: ["Web Dev", "Full Stack", "UI/UX"],
+    category: ["AI", "Speech Recognition", "Web Service"],
     shortDescription:
-      "Developed and optimized a high-performing website catering to over 4000 users, emphasizing efficiency and maintainability.",
-    websiteLink: "https://builtdesign.in",
-    techStack: [
-      "Next.js",
-      "React",
-      "Node.js",
-      "MongoDB",
-      "GraphQL",
-      "Nest.js",
-      "Typescript",
-    ],
-    startDate: new Date("2021-07-01"),
-    endDate: new Date("2022-07-01"),
-    companyLogoImg: "/projects/builtdesign/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Landing Page",
-        description:
-          "Modern and responsive landing page showcasing company services and portfolio",
-        imgArr: [
-          "/projects/builtdesign/landing_1.webp",
-          "/projects/builtdesign/landing_3.webp",
-          "/projects/builtdesign/landing_5.webp",
-          "/projects/builtdesign/landing_6.webp",
-          "/projects/builtdesign/landing_2.webp",
-          "/projects/builtdesign/landing_4.webp",
-        ],
-      },
-      {
-        title: "Custom PDF Reader and optimizer",
-        description:
-          "Specialized PDF viewer with optimization features for improved performance and user experience",
-        imgArr: ["/projects/builtdesign/pdf_opt.webp"],
-      },
-      {
-        title: "Clients Dashboard",
-        description:
-          "Comprehensive client portal with project tracking, document management, and communication tools",
-        imgArr: [
-          "/projects/builtdesign/cli_dashboard_1.webp",
-          "/projects/builtdesign/cli_dashboard_2.webp",
-          "/projects/builtdesign/cli_dashboard_3.webp",
-        ],
-      },
-      {
-        title: "Admin Dashboard",
-        description:
-          "Powerful administrative interface for managing users, projects, and system settings",
-        imgArr: ["/projects/builtdesign/logo.png"],
-      },
-    ],
+      "강의 녹음(STT)에서 잘못 인식된 영문 전문 용어를 자동으로 교정하는 AI 기반 학습 지원 서비스",
+    websiteLink: "",
+    githubLink: "https://github.com/jhhan0208/TermCorrector",
+    techStack: ["Python", "Flask", "Whisper", "FastText"],
+    startDate: new Date("2024-09-06"),
+    endDate: new Date("2024-11-22"),
+    companyLogoImg: "/timeline/project/termcorrector/logo.png",
     descriptionDetails: {
       paragraphs: [
-        "During my time at Builtdesign, I had the opportunity to work on a dynamic and user-focused project that involved designing and optimizing a website catering to a user base of over 4000 individuals. My role as a full-stack web developer was to ensure a seamless experience for users by creating an efficient and maintainable platform.",
-        "I collaborated closely with the product team to integrate cutting-edge features, employing technologies like Next.js and React with TypeScript for captivating front-end experiences. Additionally, I contributed significantly to the backend by utilizing Node.js, MongoDB, and GraphQL to design robust APIs and ensure smooth system functionality.",
-        "This experience allowed me to enhance my skills in various areas of web development and deliver a high-quality product. I gained proficiency in front-end technologies such as Material UI and Tailwind CSS, as well as backend technologies including Nest.js and MySQL. The project's success in catering to a large user base and providing an intuitive user interface has further motivated me to pursue excellence in web development.",
+        "기존 Speech-to-Text(STT) 서비스는 일반적인 한국어 인식에는 높은 성능을 보이지만, 강의에서 자주 등장하는 영문 전문 용어는 발화자의 외래어 발음 차이로 인해 잘못 변환되는 문제가 있습니다.",
       ],
-      bullets: [
-        "Developed and optimized a high-performing website catering to over 4000 users.",
-        "Collaborated closely with the product team to implement cutting-edge features.",
-        "Created an intuitive admin dashboard to efficiently manage and announce contest winners.",
-        "Leveraged Next.js, React with TypeScript for captivating front-end experiences.",
-        "Utilized Node.js, MongoDB, and GraphQL to design and manage databases.",
-      ],
+      bullets: ["블록 기반 상세 페이지 데모 카드입니다."],
     },
-  },
-  {
-    id: "the-super-quotes",
-    companyName: "The Super Quotes",
-    type: "Professional",
-    category: ["Mobile Dev", "Full Stack", "UI/UX"],
-    shortDescription:
-      "Elevated The Super Quotes app with JavaScript, React Native, APIs, Redux magic, and Google Play Store debut.",
-    websiteLink:
-      "https://play.google.com/store/apps/details?id=com.thesuperlife",
-    techStack: ["React Native", "Node.js", "MongoDB", "Javascript"],
-    startDate: new Date("2021-07-01"),
-    endDate: new Date("2022-07-01"),
-    companyLogoImg: "/projects/superquotes/logo.png",
-    pagesInfoArr: [
+    pagesInfoArr: [],
+    detailBlocks: [
       {
-        title: "Quotes View Page",
-        description:
-          "Elegantly designed quotes display with customizable themes and sharing options",
-        imgArr: ["/projects/superquotes/app_2.webp"],
+        type: "video",
+        src: "https://www.youtube.com/watch?v=J-eTbh80qko",
+        title: "TermCorrector Demo",
       },
       {
-        title: "Quotes Download Component",
-        description:
-          "Feature allowing users to download quotes as beautiful images for social media sharing",
-        imgArr: [
-          "/projects/superquotes/app_4.webp",
-          "/projects/superquotes/app_7.webp",
+        type: "skills",
+        title: "Tech Stack",
+        items: ["Python", "Flask", "Whisper", "FastText"],
+      },
+      {
+        type: "team",
+        title: "Team",
+        members: [
+          {
+            name: "선신욱",
+            github: "https://github.com/tjs1012",
+            role: "-",
+          },
+          {
+            name: "한주상",
+            github: "https://github.com/H-Software224",
+            role: "-",
+          },
+          {
+            name: "한지훈",
+            github: "https://github.com/jhhan0208",
+            role: "-",
+          },
+        ],
+      },
+      { type: "heading", text: "Description" },
+      {
+        type: "paragraphs",
+        items: [
+          "기존 Speech-to-Text(STT) 서비스는 일반적인 한국어 인식에는 높은 성능을 보이지만, 강의에서 자주 등장하는 영문 전문 용어는 발화자의 외래어 발음 차이로 인해 잘못 변환되는 문제가 있습니다.",
         ],
       },
       {
-        title: "Account Management",
-        description:
-          "User profile management with favorites, history, and personalization settings",
-        imgArr: ["/projects/superquotes/app_6.webp"],
+        type: "image",
+        src: "/timeline/project/termcorrector/intro.png",
       },
       {
-        title: "Interest Selection and Update Page",
-        description:
-          "Interactive interface for users to select and update their quote preferences and interests",
-        imgArr: [
-          "/projects/superquotes/app_1.webp",
-          "/projects/superquotes/app_3.webp",
+        type: "paragraphs",
+        items: [
+          "TermCorrector는 사용자가 업로드한 강의 자료(PDF)에서 전문 용어를 자동 추출하고, Whisper STT 결과와 비교하여 잘못 인식된 용어를 탐지합니다. 이후 데이터 증강으로 학습한 FastText 모델을 이용해 가장 적절한 영문 용어를 예측하고, 교정 결과를 웹 서비스에서 바로 확인할 수 있도록 구현했습니다.",
+          "Fine-tuning 없이도 강의 자료를 활용하여 도메인 특화 STT 성능을 개선할 수 있도록 설계했으며, 실제 학습에 활용 가능한 웹 서비스를 함께 개발하여 연구의 활용 가능성을 검증했습니다.",
         ],
       },
       {
-        title: "Responsiveness",
-        description:
-          "Adaptive design ensuring optimal user experience across various device sizes and orientations",
-        imgArr: ["/projects/superquotes/app_5.webp"],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        `Venturing into the world of creativity at The Super Quotes was an exhilarating journey. As a passionate developer, I led the charge in crafting a compelling application from inception to completion, using the dynamic duo of JavaScript and React Native.`,
-        `The heart of my achievement lay in the seamless integration of APIs, threading a tapestry of data flow that propelled the application's functionality to new heights.`,
-        `With the wizardry of Redux, I choreographed a symphony of state management and performance optimization, orchestrating a ballet of responsiveness that wowed users with every interaction.`,
-        `A crescendo awaited as I unveiled the culmination of my work on the grand stage of the Google Play Store. The app's debut marked an epoch, opening doors to an expansive audience eager to embrace the charm of The Super Quotes.`,
-      ],
-      bullets: [
-        "Led the end-to-end development of a captivating application using JavaScript and React Native.",
-        "Championed the integration of APIs, harmonizing data flow and enhancing application functionality.",
-        "Conducted Redux magic to ensure state management and optimize performance, delivering a mesmerizing user experience.",
-        "Premiered the application on the Google Play Store, capturing hearts and expanding its user base.",
-      ],
-    },
-  },
-  {
-    id: "apex-shopping",
-    companyName: "Apex Shopping App",
-    type: "Personal",
-    category: ["Mobile Dev", "Full Stack", "UI/UX"],
-    shortDescription:
-      "Developed a feature-rich mobile shopping application with admin panel, user authentication, and seamless product management using React Native and Firebase.",
-    githubLink: "https://github.com/namanbarkiya/apex-shopping-app",
-    techStack: ["React Native", "Javascript", "Redux", "Node.js", "express.js"],
-    startDate: new Date("2021-07-14"),
-    endDate: new Date("2022-07-01"),
-    companyLogoImg: "/projects/apex/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Splash Screen",
-        description: "Custom animated splash screen with app branding",
-        imgArr: ["/projects/apex/app_7.webp"],
-      },
-      {
-        title: "Login/Signup Authentication",
-        description: "Secure user authentication system with Firebase",
-        imgArr: ["/projects/apex/app_1.webp"],
-      },
-      {
-        title: "All Products Explore Screen",
-        description: "Interactive product browsing with categories and filters",
-        imgArr: ["/projects/apex/app_3.webp"],
-      },
-      {
-        title: "Admin Panel",
-        description:
-          "Comprehensive admin dashboard for product and order management",
-        imgArr: ["/projects/apex/app_4.webp", "/projects/apex/app_6.webp"],
-      },
-      {
-        title: "Sidenav Navigation",
-        description: "Intuitive side navigation for easy app navigation",
-        imgArr: ["/projects/apex/app_5.webp"],
-      },
-      {
-        title: "Firebase Database",
-        description:
-          "Real-time database structure for efficient data management",
-        imgArr: ["/projects/apex/db.webp"],
-      },
-    ],
-    descriptionDetails: {
-      paragraphs: [
-        "The Apex Shopping App represents a comprehensive mobile e-commerce solution that I developed from the ground up using React Native and Firebase. This project showcases my ability to create a full-featured shopping application with both user and admin functionalities.",
-        "The application features a robust authentication system, allowing users to securely sign up and log in. The product exploration interface is designed with user experience in mind, incorporating smooth navigation and intuitive filtering options.",
-        "One of the key highlights is the admin panel, which provides complete control over product management, order processing, and inventory tracking. The integration with Firebase ensures real-time data synchronization and reliable data persistence.",
-        "The app's architecture emphasizes scalability and performance, utilizing Redux for state management and following best practices for mobile app development. The UI/UX design focuses on providing a seamless shopping experience across different device sizes.",
-      ],
-      bullets: [
-        "Implemented secure user authentication and authorization using Firebase",
-        "Designed and developed an intuitive product browsing and shopping cart system",
-        "Created a comprehensive admin panel for product and order management",
-        "Integrated real-time data synchronization using Firebase Database",
-        "Implemented state management using Redux for optimal performance",
-        "Designed responsive UI components following mobile-first principles",
-        "Incorporated smooth animations and transitions for enhanced user experience",
-      ],
-    },
-  },
-  {
-    id: "builtdesign-blogs",
-    companyName: "Builtdesign Blogs",
-    type: "Professional",
-    category: ["Web Dev", "Full Stack", "UI/UX"],
-    shortDescription:
-      "Crafted Builtdesign's vibrant Blogs Website using Netlify CMS and React for engaging content experiences.",
-    websiteLink: "https://blog.builtdesign.in",
-    techStack: ["Next.js", "React", "Node.js", "MongoDB", "Typescript"],
-    startDate: new Date("2022-03-01"),
-    endDate: new Date("2022-07-01"),
-    companyLogoImg: "/projects/builtdesign-blogs/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Blog Landing Page",
-        description:
-          "Modern and responsive landing page showcasing featured articles",
-        imgArr: ["/projects/builtdesign-blogs/blog_2.webp"],
-      },
-      {
-        title: "Blog Listing",
-        description:
-          "Organized display of all blog posts with search and filtering",
-        imgArr: ["/projects/builtdesign-blogs/blog_3.webp"],
-      },
-      {
-        title: "Category Navigation",
-        description: "Intuitive category-based navigation system",
-        imgArr: ["/projects/builtdesign-blogs/blog_1.webp"],
-      },
-      {
-        title: "Article View",
-        description:
-          "Clean and readable article layout with rich media support",
-        imgArr: [
-          "/projects/builtdesign-blogs/blog_4.webp",
-          "/projects/builtdesign-blogs/blog_5.webp",
+        type: "bullets",
+        items: [
+          "Whisper STT와 FastText를 결합한 영문 전문 용어 교정 시스템 설계",
+          "강의 자료(PDF)에서 전문 용어를 자동 추출하여 도메인별 학습 데이터 생성",
+          "한국인 영어 발음 오류 패턴을 반영한 데이터 증강 기법 적용",
+          "사용자가 교정 결과를 직접 선택하거나 수정할 수 있는 웹 서비스 개발",
+          "2024 SWCON Conference 우수상 수상",
+          "KCC 2025 논문 발표 및 학회 포스터 전시",
+          "KCC 2025 학부생 부문 최우수상 수상",
         ],
       },
+      {
+        type: "button",
+        label: "View on GitHub",
+        href: "https://github.com/jhhan0208/TermCorrector",
+      },
+      { type: "heading", text: "Page Info" },
+      { type: "heading", text: "Landing Page", level: "h3" },
+      {
+        type: "paragraphs",
+        items: [
+          "강의 자료(PDF)와 강의 녹음(M4A)을 업로드하여 STT 교정을 시작하는 메인 화면입니다.",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/project/termcorrector/main-page.png",
+      },
+      { type: "heading", text: "System Architecture", level: "h3" },
+      {
+        type: "paragraphs",
+        items: [
+          "강의 자료에서 전문 용어를 추출하고, Whisper 기반 STT와 FastText 모델을 결합하여 잘못 인식된 영문 용어를 교정하는 전체 파이프라인입니다.",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/project/termcorrector/architecture.png",
+      },
+      { type: "heading", text: "Correction Pipeline", level: "h3" },
+      {
+        type: "paragraphs",
+        items: [
+          "PDF에서 추출한 전문 용어와 STT 결과를 비교하여 후보를 선정하고, 데이터 증강 기반 FastText 모델을 통해 올바른 영문 용어로 교정합니다.",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/project/termcorrector/correction-flow.png",
+      },
+      { type: "heading", text: "Correction Result", level: "h3" },
+      {
+        type: "paragraphs",
+        items: [
+          "교정 대상 단어를 하이라이트하여 사용자에게 보여주며, 여러 후보 중 원하는 결과를 선택하거나 직접 수정할 수 있습니다.",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/project/termcorrector/result-page.png",
+      },
+      {
+        type: "image",
+        src: "/timeline/project/termcorrector/result-detail.png",
+      },
+      { type: "heading", text: "📄 Poster & Publication", level: "h2" },
+      {
+        type: "paragraphs",
+        items: [
+          "KCC 2025 논문과 학회 포스터를 통해 프로젝트의 연구 내용과 시스템 구조를 발표했습니다.",
+        ],
+      },
+      {
+        type: "button",
+        label: "KCC 2025",
+        href: "https://www.kiise.or.kr/conference/kcc/2025/",
+      },
+      {
+        type: "image",
+        src: "/timeline/project/termcorrector/KCC2025poster.png",
+      },
+      {
+        type: "button",
+        label: "TermCorrector: Speech-to-Text(STT)에서의 영문 용어 교정 서비스",
+        href: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318661",
+      },
+      {
+        type: "button",
+        label: "논문 PDF 보기",
+        href: "/timeline/project/termcorrector/TermCorrector_논문.pdf",
+      },
+      {
+        type: "button",
+        label: "논문 포스터 보기",
+        href: "/timeline/project/termcorrector/TermCorrector_포스터.pdf",
+      },
+      { type: "heading", text: "🏆 Awards", level: "h2" },
+      {
+        type: "button",
+        label: "2024 경희대학교 Swcon Conference 우수상",
+        href: "/timeline/project/termcorrector/SW_컨퍼런스_우수상.pdf",
+      },
+      {
+        type: "button",
+        label: "KCC 2025 학부생부문 최우수상",
+        href: "/timeline/project/termcorrector/TermCorrector 최우수상.pdf",
+      },
     ],
-    descriptionDetails: {
-      paragraphs: [
-        "As part of the Builtdesign platform, I developed a sophisticated blog website that serves as a content hub for the company's thought leadership and industry insights. The project leveraged Next.js and React to create a fast, SEO-friendly platform.",
-        "The blog platform features a modern, responsive design that prioritizes readability and user engagement. I implemented a robust content management system using Netlify CMS, enabling the content team to easily publish and manage blog posts.",
-        "The architecture includes server-side rendering for optimal performance and SEO, while MongoDB provides flexible content storage. TypeScript ensures code reliability and maintainability throughout the application.",
-        "Key features include category-based navigation, search functionality, and a rich text editor for content creation. The platform supports various content types including images, code snippets, and embedded media.",
-      ],
-      bullets: [
-        "Developed a modern blog platform using Next.js and React with TypeScript",
-        "Implemented Netlify CMS for efficient content management",
-        "Created a responsive design that prioritizes readability and user engagement",
-        "Built server-side rendering for optimal performance and SEO",
-        "Integrated MongoDB for flexible content storage and management",
-        "Developed category-based navigation and search functionality",
-        "Implemented rich text editing capabilities for content creation",
-      ],
-    },
   },
 
+  // seecode
   {
-    id: "cirql-dashboard",
-    companyName: "Cirql Dashboard",
-    type: "Personal",
-    category: ["Web Dev", "Frontend", "UI/UX"],
+    id: "seecode",
+    companyName: "SeeCode",
+    type: "Professional",
+    category: ["AI", "Accessibility", "Developer Tool"],
     shortDescription:
-      "Created a dashboard project using React and Tailwind CSS, focusing on UI design and routing implementation.",
-    websiteLink: "https://cirql-ui.namanbarkiya.xyz/",
-    techStack: ["React", "Tailwind CSS", "Google Auth"],
-    startDate: new Date("2023-01-01"),
-    endDate: new Date("2023-02-15"),
-    companyLogoImg: "/projects/cirql/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Dashboard Home",
-        description:
-          "Main dashboard view with analytics widgets and data visualization",
-        imgArr: ["/projects/cirql/web_1.png", "/projects/cirql/web_2.png"],
-      },
-      {
-        title: "Profile Page",
-        description:
-          "User profile management interface with customization options",
-        imgArr: ["/projects/cirql/web_3.png", "/projects/cirql/web_4.png"],
-      },
+      "Flutter 앱의 접근성 문제를 자동으로 탐지하고 AI 기반 코드 수정안을 제안하는 VS Code Extension",
+  
+    websiteLink: "",
+    githubLink: "https://github.com/jhhan0208/flutter-accessbility-checker",
+  
+    techStack: [
+      "Python",
+      "Flutter",
+      "React",
     ],
+    startDate: new Date("2001-02-08"),
+    endDate: new Date("2001-02-08"),
+  
+    companyLogoImg: "/timeline/project/seecode/logo.png",
+  
     descriptionDetails: {
       paragraphs: [
-        "For the 'Cirql Dashboard' personal, I aimed to enhance my UI design skills and deepen my understanding of routing within a React application.",
-        "I utilized React and Tailwind CSS to craft an intuitive dashboard interface that provides users with an organized overview of data and functionalities. The UI components were thoughtfully designed to ensure a seamless user experience.",
-        "Incorporating Google Sign-In Authentication further fortified the project by adding a layer of security and convenience. Users are required to authenticate before accessing certain routes, ensuring the safety of sensitive information.",
-        "The routing system was meticulously implemented to enable smooth navigation between different sections of the dashboard, simulating real-world use cases.",
-        "Through this project, I've gained valuable insights into UI/UX design principles and the implementation of secure and efficient routing in React applications.",
+        "모바일 접근성은 누구나 서비스를 이용하기 위한 필수 요소이지만, 많은 앱이 대체 텍스트 부족과 스크린리더 미지원으로 인해 시각장애인이 사용하기 어려운 문제가 있습니다.",
       ],
       bullets: [
-        "Created a user-friendly dashboard project using React and Tailwind CSS.",
-        "Implemented Google Sign-In Authentication to ensure secure access to sensitive routes.",
-        "Designed UI components to provide an intuitive and visually pleasing experience.",
-        "Focused on implementing a smooth routing system to simulate real-world use cases.",
-        "Enhanced my skills in UI design, routing, and component architecture.",
+        "Flutter 기반 접근성 자동 진단 및 코드 수정 제안",
       ],
     },
-  },
-  {
-    id: "inscript-hindi-typing",
-    companyName: "Inscript Hindi Typing",
-    type: "Personal",
-    category: ["Web Dev", "UI/UX"],
-    shortDescription:
-      "Developed a user-friendly website for Inscript Hindi typing, addressing the need for a simple tool for Hindi writers to convey data digitally.",
-    websiteLink: "https://hindityping.namanbarkiya.xyz",
-    githubLink: "https://github.com/namanbarkiya/inscript-hindi-keyboard",
-    techStack: ["HTML 5", "CSS 3", "Javascript"],
-    startDate: new Date("2022-05-01"),
-    endDate: new Date("2022-06-15"),
-    companyLogoImg: "/projects/hindi-keyboard/logo.png",
-    pagesInfoArr: [
+  
+    pagesInfoArr: [],
+  
+    detailBlocks: [
       {
-        title: "Typing Interface",
-        description: "Minimal and user-friendly Inscript Hindi typing area",
-        imgArr: ["/projects/hindi-keyboard/web_1.png"],
+        type: "video",
+        src: "https://www.youtube.com/watch?v=pdvzpfMuuqQ",
+        title: "SeeCode Demo",
       },
+  
       {
-        title: "Copy and Download the file",
-        description:
-          "Export functionality allowing users to copy text or download as a document file",
-        imgArr: [
-          "/projects/hindi-keyboard/web_2.png",
-          "/projects/hindi-keyboard/web_3.png",
+        type: "skills",
+        title: "Tech Stack",
+        items: [
+          "Python",
+          "Flutter",
+          "React",
         ],
       },
+  
+      {
+        type: "team",
+        title: "Team",
+        members: [
+          {
+            name: "오종현",
+            github: "https://github.com/Sjaize",
+            role: "-",
+          },
+          {
+            name: "정유진",
+            github: "https://github.com/YuujInJeong",
+            role: "-",
+          },
+          {
+            name: "오찬세",
+            github: "https://github.com/chansses",
+            role: "-",
+          },
+          {
+            name: "한지훈",
+            github: "https://github.com/jhhan0208",
+            role: "-",
+          },
+        ],
+      },
+  
+      {
+        type: "heading",
+        text: "Description",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "많은 모바일 애플리케이션은 스크린리더를 위한 접근성 정보가 부족하여 시각장애인이 버튼이나 아이콘의 의미를 이해하지 못하는 문제가 있습니다.",
+          "SeeCode는 Flutter 프로젝트를 분석하여 접근성 문제를 자동으로 탐지하고, LLM을 활용해 사용자 흐름(Context)을 고려한 대체 텍스트와 코드 수정안을 생성하는 VS Code Extension입니다.",
+          "접근성 전문가가 아니더라도 개발 단계에서 즉시 접근성을 점검하고 개선할 수 있도록 설계하여 개발 비용을 줄이고 모바일 접근성을 향상시키는 것을 목표로 했습니다.",
+        ],
+      },
+  
+      {
+        type: "bullets",
+        items: [
+          "VS Code Extension 기반 접근성 검사 도구 개발",
+          "Flutter 코드와 실행 화면을 함께 분석하는 Context-aware 접근성 진단",
+          "LLM을 활용한 대체 텍스트 및 코드 수정 제안",
+          "Diff View를 통한 원클릭 코드 반영 기능",
+          "실제 시각장애인 인터뷰를 기반으로 서비스 검증",
+          "한국소프트웨어종합학술대회(KSC 2025) 논문 발표",
+          "KSC 2025 학부생 논문경진대회 장려상 수상",
+          "2025 SW인재페스티벌 우수작품 발표 및 전시",
+        ],
+      },
+  
+      {
+        type: "button",
+        label: "View on GitHub",
+        href: "https://github.com/jhhan0208/flutter-accessbility-checker",
+      },
+  
+      {
+        type: "heading",
+        text: "Page Info",
+      },
+  
+      {
+        type: "heading",
+        text: "Problem Definition",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "시각장애인은 모바일 앱을 사용할 때 스크린리더에 의존하지만, 많은 앱에서 버튼과 아이콘에 접근성 정보가 부족하여 기능을 이해하기 어렵습니다.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/timeline/project/seecode/문제정의.png",
+      },
+
+      {
+        type: "paragraphs",
+        items: [
+          "국내 모바일 앱과 SW중심대학 통합앱을 조사한 결과 접근성 부족 문제가 광범위하게 존재함을 확인했습니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/seecode/학교문제.png",
+      },
+  
+      {
+        type: "heading",
+        text: "System Overview",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "Flutter 프로젝트를 분석하고 실행 화면과 코드 문맥을 함께 고려하여 접근성 문제를 탐지하는 전체 시스템 구조입니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/seecode/architecture.png",
+      },
+
+      {
+        type: "image",
+        src: "/timeline/project/seecode/architecture2.png",
+      },
+  
+      {
+        type: "heading",
+        text: "Accessibility Diagnosis",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "앱 화면과 코드의 연결 관계를 분석하여 스크린리더가 읽지 못하는 UI 요소를 탐지하고 대시보드에 시각적으로 제공합니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/seecode/logo.png",
+      },
+  
+      {
+        type: "heading",
+        text: "AI Code Suggestion",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "LLM이 사용자 흐름과 코드 문맥을 함께 고려하여 적절한 접근성 코드와 대체 텍스트를 생성하고, Diff View를 통해 원클릭으로 적용할 수 있습니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/seecode/code-suggestion.png",
+      },
+  
+      {
+        type: "heading",
+        text: "Result",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "실제 시각장애인과 개발자 인터뷰를 통해 접근성 향상 효과와 개발 편의성을 검증했습니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/seecode/result1.png",
+      },
+      {
+        type: "image",
+        src: "/timeline/project/seecode/result2.png",
+      },
+  
+      {
+        type: "heading",
+        text: "📄 Poster & Publication",
+        level: "h2",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "KSC 2025에서 연구 결과를 발표했으며, 모바일 접근성 진단 및 코드 수정 제안 시스템을 논문으로 출판했습니다.",
+        ],
+      },
+  
+      {
+        type: "button",
+        label: "KSC 2025",
+        href: "https://www.kiise.or.kr/conference/KSC/2025/",
+      },
+  
+      {
+        type: "button",
+        label: "맥락 정보를 활용한 모바일 접근성 진단 및 코드 수정 제안 시스템",
+        href: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12577742",
+      },
+  
+      {
+        type: "button",
+        label: "논문 PDF 보기",
+        href: "/timeline/project/seecode/seecode_논문.pdf",
+      },
+  
+      {
+        type: "button",
+        label: "논문 포스터 보기",
+        href: "/timeline/project/seecode/seecode_포스터.pdf",
+      },
+  
+      {
+        type: "heading",
+        text: "🏆 Awards & Exhibition",
+        level: "h2",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "SW인재페스티벌에서 우수작품으로 선정되어 전시 및 발표를 진행했으며, KSC 학부생 논문경진대회 장려상을 수상했습니다.",
+        ],
+      },
+  
+      {
+        type: "button",
+        label: "2025 SW인재페스티벌",
+        href: "https://www.swfestival2025.kr/",
+      },
+  
+      {
+        type: "button",
+        label: "KSC 2025 학부생 논문경진대회 장려상",
+        href: "/timeline/project/seecode/seecode_수상확인서.pdf",
+      },
     ],
+  },
+
+  // woodjudge
+  {
+    id: "woodjudge",
+    companyName: "WOODJUDGE",
+    type: "Professional",
+    category: ["LLM", "RAG", "AI"],
+    shortDescription:
+      "유사 판례 검색(RAG)을 기반으로 신뢰도 높은 법률 조언을 제공하는 AI 서비스",
+  
+    websiteLink: "",
+    githubLink: "https://github.com/jhhan0208/WoodJudge",
+  
+    techStack: [
+      "Python",
+      "FastAPI",
+      "React",
+      "MySQL",
+    ],
+  
+    startDate: new Date("2001-02-08"),
+    endDate: new Date("2001-02-08"),
+  
+    companyLogoImg: "/timeline/project/woodjudge/logo.png",
+  
     descriptionDetails: {
       paragraphs: [
-        "The 'Inscript Hindi Typing Website' project emerged from the need to provide a simple and accessible tool for Hindi writers, especially those in digital news and media, who wished to convey data in Hindi.",
-        "Recognizing the challenges posed by complex software in the market, I set out to create a minimalistic typing area that catered to the needs of a vast community of Hindi typists in India.",
-        "The project was designed to address the specific requirements of users familiar with the Inscript keyboard layout, mapping English and Hindi alphabets for seamless typing. The intuitive interface allowed users to effortlessly switch between languages, streamlining the process of content creation.",
-        "Leveraging HTML and CSS, I crafted the website's UI to ensure a user-friendly experience. Additionally, Local Storage was utilized to enable users to save and retrieve their work, enhancing convenience and productivity.",
-        "The website's focus on user experience and simplicity proved to be a key factor in its popularity among Hindi writers. By offering a tool that reduced the barriers to entry, I contributed to the digital empowerment of Hindi typists who previously faced challenges in conveying their message effectively.",
-        "This project marked one of my initial forays into web development and highlighted the transformative potential of technology in addressing real-world challenges.",
+        "일반 사용자가 법률 지식 없이도 자신의 상황을 자연어로 입력하면, 유사 판례를 기반으로 대응 전략을 제안하는 RAG 기반 법률 상담 서비스입니다.",
       ],
       bullets: [
-        "Developed a user-friendly website for Inscript Hindi typing.",
-        "Catered to the needs of Hindi writers in digital news and media.",
-        "Created a minimalistic and intuitive typing interface for the Inscript keyboard layout.",
-        "Mapped English and Hindi alphabets to provide a seamless typing experience.",
-        "Utilized HTML and CSS to design a user-friendly UI.",
-        "Implemented Local Storage to enable users to save and retrieve their work.",
-        "Contributed to the digital empowerment of Hindi typists by offering a simple tool.",
-        "Marked one of my first web development projects, showcasing technology's potential for addressing real-world needs.",
+        "LLM + RAG 기반 판례 검색 및 법률 조언 시스템",
       ],
     },
+  
+    pagesInfoArr: [],
+  
+    detailBlocks: [
+      {
+        type: "video",
+        src: "https://youtu.be/BF-l0Enyq-A",
+        title: "WOODJUDGE Demo",
+      },
+  
+      {
+        type: "skills",
+        title: "Tech Stack",
+        items: [
+          "Python",
+          "FastAPI",
+          "React",
+          "MySQL",
+        ],
+      },
+  
+      {
+        type: "team",
+        title: "Team",
+        members: [
+          {
+            name: "문상혁",
+            github: "",
+            role: "-",
+          },
+          {
+            name: "민지원",
+            github: "",
+            role: "-",
+          },
+          {
+            name: "신진수",
+            github: "https://github.com/jsshin8128",
+            role: "-",
+          },
+          {
+            name: "안성재",
+            github: "https://github.com/dmach1ne",
+            role: "-",
+          },
+          {
+            name: "우은진",
+            github: "",
+            role: "-",
+          },
+          {
+            name: "장은서",
+            github: "",
+            role: "-",
+          },
+          {
+            name: "한지훈",
+            github: "https://github.com/jhhan0208",
+            role: "-",
+          },
+        ],
+      },
+  
+      {
+        type: "heading",
+        text: "Description",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "기존 GPT 기반 법률 상담은 판례 전문 데이터에 접근하지 못해 사실성이 부족하고, 기존 판례 검색 서비스는 키워드 검색만 가능하여 일반 사용자가 활용하기 어렵다는 문제를 해결하고자 프로젝트를 시작했습니다.",
+          "WOODJUDGE는 사용자의 자연어 질의를 기반으로 유사 판례를 검색하고, 검색된 판례를 근거로 대응 전략과 예상 처벌, 법적 근거를 함께 제시하는 RAG 기반 법률 상담 시스템입니다.",
+          "판례 검색 성능 향상을 위해 법률 특화 임베딩 모델과 Chroma Vector Database를 활용했으며, 검색된 결과를 기반으로 GPT-4o mini가 신뢰도 높은 답변을 생성하도록 설계했습니다.",
+        ],
+      },
+  
+      {
+        type: "bullets",
+        items: [
+          "RAG 기반 유사 판례 검색 및 법률 조언 시스템 구현",
+          "LangChain + Chroma Vector DB 기반 Retrieval Pipeline 구축",
+          "법률 특화 임베딩(KURE)을 활용한 판례 검색 성능 향상",
+          "GPT-4o mini 기반 대응 전략 및 법적 근거 생성",
+          "Prompt Engineering을 통한 답변 품질 개선",
+          "RAG 파이프라인 최적화 및 검색 성능 평가",
+        ],
+      },
+  
+      {
+        type: "button",
+        label: "View on GitHub",
+        href: "https://github.com/jhhan0208/WoodJudge",
+      },
+  
+      {
+        type: "heading",
+        text: "Page Info",
+      },
+  
+      {
+        type: "heading",
+        text: "Problem Definition",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "법률 상담은 높은 비용과 심리적 장벽이 존재하며, GPT 기반 서비스는 판례를 근거로 한 신뢰도 높은 답변을 제공하기 어렵습니다. 또한 기존 판례 검색 서비스는 자연어 질의를 지원하지 않아 일반 사용자가 활용하기 어렵습니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/woodjudge/problem.png",
+      },
+  
+      {
+        type: "heading",
+        text: "System Architecture",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "LangChain을 중심으로 Chroma Vector DB와 MySQL을 연결하고, GPT-4o mini를 통해 판례 기반 답변을 생성하는 전체 시스템 구조입니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/woodjudge/woodjudge_파이프라인.png",
+      },
+  
+      {
+        type: "heading",
+        text: "RAG",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "사용자의 자연어 질의를 임베딩하여 유사 판례를 검색하고, 검색된 판례를 참고하여 LLM이 프롬프트 기반 대응 전략과 예상 처벌을 생성합니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/woodjudge/프롬프트.png",
+      },
+  
+      {
+        type: "heading",
+        text: "Retrieval Optimization",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "RecursiveCharacterTextSplitter를 이용한 Chunking과 KURE 임베딩 모델을 적용하여 검색 성능을 최적화했습니다. Chunk Size, Chunk Overlap, Embedding Model 등 다양한 파라미터를 비교하며 최적의 Retrieval 성능을 탐색했습니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/woodjudge/retrieval.png",
+      },
+  
+      {
+        type: "heading",
+        text: "Evaluation",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "일반적인 RAGAS 평가 방식 대신, 법률 상담 특성에 맞는 평가 방식을 설계했습니다. 사용자 질의와 검색된 판례 간의 관련성을 코사인 유사도와 LLM-as-Judge를 활용해 정량·정성적으로 함께 평가했습니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/woodjudge/evaluation.png",
+      },
+  
+      {
+        type: "heading",
+        text: "Result",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "사용자는 자신의 상황을 자연어로 입력하면 유사 판례, 판례 요약, 예상 처벌, 대응 전략을 함께 확인할 수 있으며, 기존 검색 서비스보다 직관적인 법률 상담 경험을 제공합니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/woodjudge/result.png",
+      },
+  
+      {
+        type: "heading",
+        text: "📄 Project Documents",
+        level: "h2",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "프로젝트 기획서와 발표 자료를 통해 RAG 기반 법률 상담 시스템의 설계 과정과 기술 구현 내용을 정리했습니다.",
+        ],
+      },
+  
+      {
+        type: "button",
+        label: "프로젝트 발표자료",
+        href: "/timeline/project/woodjudge/woodjudge_ppt.pdf",
+      },
+  
+      {
+        type: "button",
+        label: "프로젝트 기획서",
+        href: "/timeline/project/woodjudge/woodjudge_계획서.pdf",
+      },
+    ],
+  },
+
+  // cleansedFeedback
+  {
+    id: "cleansedfeedback",
+    companyName: "CleansedFeedback",
+    type: "Professional",
+    category: ["NLP", "LLM", "Chrome Extension"],
+    shortDescription:
+      "비난은 제거하고 피드백은 보존하는 AI 기반 댓글 정제 서비스",
+  
+    websiteLink: "",
+    githubLink: "https://github.com/jhhan0208/CleansedFeedback",
+  
+    techStack: [
+      "Python",
+      "Flask",
+      "Chrome Extension",
+      "Selenium",
+      "KcELECTRA",
+      "Hugging Face",
+    ],
+  
+    startDate: new Date("2001-02-08"),
+    endDate: new Date("2001-02-08"),
+  
+    companyLogoImg: "/timeline/project/cleansedfeedback/main.png",
+  
+    descriptionDetails: {
+      paragraphs: [
+        "악성 댓글을 단순히 제거하는 것이 아니라, 비난은 제거하고 피드백은 유지하여 창작자에게 도움이 되는 댓글만 제공하는 AI 댓글 정제 서비스입니다.",
+      ],
+      bullets: [
+        "LLM + Fine-tuned NLP 모델 기반 댓글 분류 및 순화 시스템",
+      ],
+    },
+  
+    pagesInfoArr: [],
+  
+    detailBlocks: [
+      {
+        type: "video",
+        src: "https://youtu.be/EaX9uLS-Ggk?si=voMyT3rqJeBzxXkP",
+        title: "CleansedFeedback Demo",
+      },
+  
+      {
+        type: "skills",
+        title: "Tech Stack",
+        items: [
+          "Python",
+          "Flask",
+          "Chrome Extension",
+          "Selenium",
+          "KcELECTRA",
+          "Hugging Face",
+        ],
+      },
+  
+      {
+        type: "heading",
+        text: "Description",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "기존 악성 댓글 연구는 비난을 제거하거나 순화하는 데 집중하여, 창작자에게 필요한 피드백까지 함께 사라지는 문제가 있었습니다.",
+          "CleansedFeedback는 댓글을 '중립 / 순수 피드백 / 순수 비난 / 비난 섞인 피드백'의 네 가지 유형으로 분류한 뒤, 비난만 존재하는 댓글은 제거하고 피드백이 포함된 댓글은 GPT를 이용해 비난 표현만 순화하여 제공합니다.",
+          "Chrome Extension과 Flask 서버를 이용하여 실제 네이버 웹툰 댓글 페이지에서 동작하는 서비스 형태로 구현했습니다.",
+        ],
+      },
+  
+      {
+        type: "bullets",
+        items: [
+          "Chrome Extension 기반 실시간 댓글 정제 서비스 구현",
+          "KcELECTRA 기반 비난 분류 모델 활용",
+          "GPT-4o를 활용한 자동 데이터 라벨링",
+          "KcELECTRA Fine-tuning을 통한 피드백 분류 모델 개발",
+          "LLM 기반 댓글 순화(Prompt Engineering)",
+          "실제 웹툰 서비스 환경에서 동작하는 End-to-End 파이프라인 구축",
+        ],
+      },
+  
+      {
+        type: "button",
+        label: "View on GitHub",
+        href: "https://github.com/jhhan0208/CleansedFeedback",
+      },
+  
+      {
+        type: "heading",
+        text: "Page Info",
+      },
+  
+      {
+        type: "heading",
+        text: "Problem Definition",
+        level: "h3",
+      },
+
+      {
+        type: "image",
+        src: "/timeline/project/cleansedfeedback/문제정의.png",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "기존 악성 댓글 제거 방식은 건설적인 피드백까지 함께 삭제하여 창작자가 필요한 의견을 놓칠 수 있습니다. 본 프로젝트는 '비난'과 '피드백'을 구분하여 가치 있는 의견만 남기는 것을 목표로 했습니다.",
+        ],
+      },
+
+      {
+        type: "image",
+        src: "/timeline/project/cleansedfeedback/기존연구.png",
+      },
+
+      {
+        type: "image",
+        src: "/timeline/project/cleansedfeedback/기존연구와_비교.png",
+      },
+
+      {
+        type: "heading",
+        text: "System Pipeline",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "Chrome Extension이 현재 웹툰 댓글을 수집하면 Flask 서버에서 비난 여부와 피드백 여부를 각각 분류하고, GPT-4o를 이용해 비난 섞인 피드백 댓글만 순화하여 다시 웹페이지에 표시합니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/cleansedfeedback/파이프라인.png",
+      },
+  
+      {
+        type: "heading",
+        text: "Dataset Construction",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "공개된 피드백 데이터셋이 존재하지 않아 다양한 평점의 네이버 웹툰 댓글을 직접 수집했습니다. GPT-4o를 활용해 1차 자동 라벨링을 수행하고, 무작위 샘플에 대해 사람 검증(Gold Label)을 진행하여 데이터셋의 신뢰성을 확보했습니다.",
+        ],
+      },
+  
+      {
+        type: "heading",
+        text: "Model Training",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "피드백 데이터 불균형 문제를 해결하기 위해 Down Sampling을 적용했으며, KcELECTRA를 Fine-tuning하여 피드백 분류 모델을 구축했습니다. 이후 Hugging Face에 모델을 배포하여 서비스에서 활용했습니다.",
+        ],
+      },
+
+      {
+        type: "button",
+        label: "HuggingFace Link",
+        href: "https://huggingface.co/jhhan0208/feedback-classification-kcelectra-v1",
+      },
+  
+      {
+        type: "heading",
+        text: "Evaluation",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "GPT 라벨링은 Accuracy 약 0.90, F1 약 0.91을 기록했고, Fine-tuned KcELECTRA 모델은 5-Fold Cross Validation 기준 Accuracy 약 0.83, F1 Score 약 0.85를 달성했습니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/cleansedfeedback/모델_성능평가.png",
+      },
+  
+      {
+        type: "heading",
+        text: "Result",
+        level: "h3",
+      },
+  
+      {
+        type: "paragraphs",
+        items: [
+          "순수 비난 댓글은 제거되고, 비난 섞인 피드백은 순화된 피드백으로 변경되어 사용자에게 제공됩니다. 이를 통해 창작자는 감정적인 공격 없이 개선에 도움이 되는 의견만 확인할 수 있습니다.",
+        ],
+      },
+  
+      {
+        type: "image",
+        src: "/timeline/project/cleansedfeedback/결과_웹.png",
+      },
+
+      {
+        type: "image",
+        src: "/timeline/project/cleansedfeedback/결과_통계2.png",
+      },
+  
+      {
+        type: "heading",
+        text: "📄 Project Documents",
+        level: "h2",
+      },
+  
+      {
+        type: "button",
+        label: "Project Presentation",
+        href: "/timeline/project/cleansedfeedback/소융캡디_발표자료_2차.pdf",
+      },
+  
+      {
+        type: "button",
+        label: "Paper",
+        href: "/timeline/project/cleansedfeedback/가논문.pdf",
+      },
+    ],
   },
 ];
 

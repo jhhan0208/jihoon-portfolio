@@ -9,24 +9,23 @@ export const routesConfig: any = {
       href: "/experience",
     },
     {
-      title: "Contributions",
-      href: "/contributions",
-    },
-    {
       title: "Skills",
       href: "/skills",
     },
     {
-      title: "Blogs",
-      href: "/blogs",
-    },
-    {
-      title: "Community",
-      href: "/community",
-    },
-    {
       title: "Contact",
       href: "/contact",
+    },
+  ],
+  // Hidden from nav but still accessible via direct URL
+  hiddenNav: [
+    {
+      title: "Contributions",
+      href: "/contributions",
+    },
+    {
+      title: "Blogs",
+      href: "/blogs",
     },
   ],
 };

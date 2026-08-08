@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { Icons } from "@/components/common/icons";
+import ContentBlocksWithToc from "@/components/common/content-blocks-with-toc";
 import ProjectDescription from "@/components/projects/project-description";
 import { buttonVariants } from "@/components/ui/button";
 import ChipContainer from "@/components/ui/chip-container";
@@ -18,7 +19,7 @@ interface ProjectPageProps {
   }>;
 }
 
-const githubUsername = "namanbarkiya";
+const githubUsername = siteConfig.username;
 
 export default async function Project({ params }: ProjectPageProps) {
   const { projectId } = await params;
@@ -27,8 +28,16 @@ export default async function Project({ params }: ProjectPageProps) {
     redirect("/projects");
   }
 
+  const hasDetailBlocks =
+    project.detailBlocks && project.detailBlocks.length > 0;
+
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
+    <article
+      className={cn(
+        "container relative py-6 lg:py-10",
+        hasDetailBlocks ? "max-w-5xl" : "max-w-3xl"
+      )}
+    >
       <Link
         href="/projects"
         className={cn(
@@ -73,14 +82,14 @@ export default async function Project({ params }: ProjectPageProps) {
           >
             <Image
               src={profileImg}
-              alt={"naman"}
+              alt={siteConfig.authorName}
               width={42}
               height={42}
               className="rounded-full bg-background"
             />
 
             <div className="flex-1 text-left leading-tight">
-              <p className="font-medium">{"Naman Barkiya"}</p>
+              <p className="font-medium">{siteConfig.authorName}</p>
               <p className="text-[12px] text-muted-foreground">
                 @{siteConfig.username}
               </p>
@@ -89,59 +98,67 @@ export default async function Project({ params }: ProjectPageProps) {
         </div>
       </div>
 
-      <Image
-        src={project.companyLogoImg}
-        alt={project.companyName}
-        width={720}
-        height={405}
-        className="my-8 rounded-md border bg-muted transition-colors"
-        priority
-      />
-
-      <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
-          Tech Stack
-        </h2>
-        <ChipContainer textArr={project.techStack} />
-      </div>
-
-      <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
-          Description
-        </h2>
-        {/* {<project.descriptionComponent />} */}
-        <ProjectDescription
-          paragraphs={project.descriptionDetails.paragraphs}
-          bullets={project.descriptionDetails.bullets}
+      {hasDetailBlocks ? (
+        <ContentBlocksWithToc
+          blocks={project.detailBlocks!}
+          altFallback={project.companyName}
         />
-      </div>
+      ) : (
+        <>
+          <Image
+            src={project.companyLogoImg}
+            alt={project.companyName}
+            width={720}
+            height={405}
+            className="my-8 rounded-md border bg-muted transition-colors"
+            priority
+          />
 
-      <div className="mb-7 ">
-        <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-5">
-          Page Info
-        </h2>
-        {project.pagesInfoArr.map((page, ind) => (
-          <div key={ind}>
-            <h3 className="flex items-center font-heading text-xl leading-tight lg:text-xl mt-3">
-              <Icons.star className="h-5 w-5 mr-2" /> {page.title}
-            </h3>
-            <div>
-              <p>{page.description}</p>
-              {page.imgArr.map((img, ind) => (
-                <Image
-                  src={img}
-                  key={ind}
-                  alt={img}
-                  width={720}
-                  height={405}
-                  className="my-4 rounded-md border bg-muted transition-colors"
-                  priority
-                />
-              ))}
-            </div>
+          <div className="mb-7 ">
+            <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
+              Tech Stack
+            </h2>
+            <ChipContainer textArr={project.techStack} />
           </div>
-        ))}
-      </div>
+
+          <div className="mb-7 ">
+            <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
+              Description
+            </h2>
+            <ProjectDescription
+              paragraphs={project.descriptionDetails.paragraphs}
+              bullets={project.descriptionDetails.bullets}
+            />
+          </div>
+
+          <div className="mb-7 ">
+            <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-5">
+              Page Info
+            </h2>
+            {project.pagesInfoArr.map((page, ind) => (
+              <div key={ind}>
+                <h3 className="flex items-center font-heading text-xl leading-tight lg:text-xl mt-3">
+                  <Icons.star className="h-5 w-5 mr-2" /> {page.title}
+                </h3>
+                <div>
+                  <p>{page.description}</p>
+                  {page.imgArr.map((img, imgIndex) => (
+                    <Image
+                      src={img}
+                      key={imgIndex}
+                      alt={img}
+                      width={720}
+                      height={405}
+                      className="my-4 rounded-md border bg-muted transition-colors"
+                      priority
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
