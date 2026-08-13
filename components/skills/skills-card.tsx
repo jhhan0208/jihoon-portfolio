@@ -1,13 +1,47 @@
+import CompactSkillRow, {
+  CompactSkillsTooltipProvider,
+} from "@/components/skills/compact-skill-row";
 import Rating from "@/components/skills/rating";
 import { skillsInterface } from "@/config/skills";
+import { cn } from "@/lib/utils";
 
 interface SkillsCardProps {
   skills: skillsInterface[];
+  className?: string;
+  variant?: "default" | "compact";
 }
 
-export default function SkillsCard({ skills }: SkillsCardProps) {
+export default function SkillsCard({
+  skills,
+  className,
+  variant = "default",
+}: SkillsCardProps) {
+  if (variant === "compact") {
+    return (
+      <CompactSkillsTooltipProvider>
+        <div className={cn("grid grid-cols-1 gap-3 sm:grid-cols-2", className)}>
+          {skills.map((skill) => (
+            <CompactSkillRow
+              key={skill.name}
+              name={skill.name}
+              description={skill.description}
+              rating={skill.rating}
+            >
+              <skill.icon size={22} />
+            </CompactSkillRow>
+          ))}
+        </div>
+      </CompactSkillsTooltipProvider>
+    );
+  }
+
   return (
-    <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      className={cn(
+        "mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3",
+        className
+      )}
+    >
       {skills.map((skill, id) => (
         <div
           key={id}

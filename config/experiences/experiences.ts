@@ -1,6 +1,7 @@
 import type { ExperienceInterface } from "../experience";
 
 export const professionalExperiences: ExperienceInterface[] = [
+  // SW 멘토
   {
     id: "sw-mentor",
     type: "Experience",
@@ -13,7 +14,7 @@ export const professionalExperiences: ExperienceInterface[] = [
       "경희대학교 박상근 교수님의 제안을 받아 2025년 1학기 응용데이터분석 과목의 SW 멘토로 활동했습니다.",
     ],
     achievements: [],
-    skills: [], //["Python", "SQL", "TensorFlow"],
+    skills: ["Python"],
     companyUrl: "https://www.khu.ac.kr",
     logo: "/timeline/experience/kyunghee-logo.png",
     detailLayout: "rich",
@@ -55,7 +56,6 @@ export const professionalExperiences: ExperienceInterface[] = [
 
 
   ///
-
   {
     id: "Template",
     type: "Experience",
@@ -107,4 +107,6 @@ export const professionalExperiences: ExperienceInterface[] = [
       },
     ],
   },
+
+
 ];

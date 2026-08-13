@@ -82,4 +82,13 @@ export const pagesConfig: PagesConfig = {
         "Jihoon Han's professional journey and experience timeline.",
     },
   },
+  achievements: {
+    title: "Achievements",
+    description: "Publications and awards from my projects.",
+    metadata: {
+      title: "Achievements",
+      description:
+        "Jihoon Han's publications and awards from academic and project work.",
+    },
+  },
 };

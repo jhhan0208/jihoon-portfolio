@@ -1,6 +1,7 @@
 import type { ExperienceInterface } from "../experience";
 
 export const internExperiences: ExperienceInterface[] = [
+  // OB 인턴
   {
     id: "ob",
     type: "Intern",
@@ -24,16 +25,18 @@ export const internExperiences: ExperienceInterface[] = [
     companyUrl: "https://www.ob.co.kr",
     logo: "/timeline/intern/ob-logo.png",
   },
+
+  // KHUDA 7기
   {
     id: "khuda-7th",
     type: "Intern",
     position: "KHUDA 7기",
     company: "KHUDA",
     location: "Seoul, South Korea",
-    startDate: new Date("2026-06-01"),
-    endDate: new Date("2026-07-01"),
+    startDate: new Date("2025-06-01"),
+    endDate: new Date("2025-07-01"),
     description: [
-      "쿠다 활동.",
+      "쿠다 활동을 통해 데이터 분석과 머신러닝 개념을 실습 중심으로 이해할 수 있도록 지원했습니다.",
     ],
     achievements: [
       "쿠다 활동.",

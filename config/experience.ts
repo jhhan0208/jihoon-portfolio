@@ -8,11 +8,8 @@ import {
   ContentBlockParagraphs,
   ContentBlockSkills,
 } from "./content-blocks";
-import { awardExperiences } from "./experiences/awards";
 import { professionalExperiences } from "./experiences/experiences";
 import { internExperiences } from "./experiences/interns";
-import { projectExperiences } from "./experiences/projects";
-import { publicationExperiences } from "./experiences/publications";
 
 export interface ExperiencePagesInfo {
   title: string;
@@ -63,6 +60,8 @@ export interface ExperienceInterface {
   skills: ValidSkills[];
   companyUrl?: string;
   logo?: string;
+  linkGroup?: string;
+  linkGroups?: string[];
   detailLayout?: "rich";
   category?: ValidCategory[];
   githubLink?: string;
@@ -75,8 +74,5 @@ export interface ExperienceInterface {
 }
 export const experiences: ExperienceInterface[] = [
   ...internExperiences,
-  ...projectExperiences,
   ...professionalExperiences,
-  ...awardExperiences,
-  ...publicationExperiences,
 ];

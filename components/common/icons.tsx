@@ -15,8 +15,10 @@ import {
   HelpCircle,
   Image,
   Laptop,
+  Languages,
   Loader2,
   LucideProps,
+  Mic,
   Menu,
   Moon,
   MoreVertical,
@@ -49,8 +51,13 @@ import {
   SiBootstrap,
   SiCss3,
   SiExpress,
+  SiFastapi,
+  SiFlask,
+  SiFlutter,
   SiGmail,
+  SiGooglechrome,
   SiGraphql,
+  SiHuggingface,
   SiHtml5,
   SiJavascript,
   SiLinkedin,
@@ -61,14 +68,46 @@ import {
   SiNetlify,
   SiNextdotjs,
   SiNodedotjs,
+  SiPython,
   SiReact,
   SiRedux,
+  SiSelenium,
   SiSocketdotio,
   SiTailwindcss,
   SiTypescript,
   SiX,
   SiYoutube,
 } from "react-icons/si";
+
+function SkillLogoIcon({
+  src,
+  alt,
+  size = 24,
+  className,
+}: {
+  src: string;
+  alt: string;
+  size?: number | string;
+  className?: string;
+}) {
+  const height = typeof size === "number" ? size : Number(size) || 24;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt}
+      height={height}
+      className={className}
+      style={{
+        height,
+        width: "auto",
+        maxWidth: height * 2.8,
+        objectFit: "contain",
+        objectPosition: "left center",
+      }}
+    />
+  );
+}
 
 export const Icons = {
   contact: Phone,
@@ -105,13 +144,30 @@ export const Icons = {
   questionMark: BsQuestionCircle,
   link: HiOutlineLink,
   externalLink: HiOutlineExternalLink,
+  languages: Languages,
+  opic: (props: LucideProps) => (
+    <SkillLogoIcon src="/skills/opic.png" alt="OPIc" {...props} />
+  ),
+  sqld: (props: LucideProps) => (
+    <SkillLogoIcon src="/skills/sqld.png" alt="SQLD" {...props} />
+  ),
   star: AiFillStar,
   amazonaws: SiAmazonwebservices,
   angular: SiAngular,
   bootstrap: SiBootstrap,
   css3: SiCss3,
   express: SiExpress,
+  fastapi: SiFastapi,
+  flask: SiFlask,
+  flutter: SiFlutter,
   graphql: SiGraphql,
+  chrome: SiGooglechrome,
+  huggingface: SiHuggingface,
+  python: SiPython,
+  selenium: SiSelenium,
+  whisper: Mic,
+  fasttext: Sparkles,
+  kcelectra: Zap,
   html5: SiHtml5,
   javascript: SiJavascript,
   mongodb: SiMongodb,

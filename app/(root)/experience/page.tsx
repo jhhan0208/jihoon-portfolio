@@ -26,20 +26,17 @@ export const metadata: Metadata = {
 const EXPERIENCE_FILTER_TABS: {
   value: string;
   label: string;
-  type?: ValidExperienceType;
+  type: ValidExperienceType;
 }[] = [
   { value: "intern", label: "Intern", type: "Intern" },
-  { value: "project", label: "Project", type: "Project" },
   { value: "experience", label: "Experience", type: "Experience" },
-  { value: "publication", label: "Publication", type: "Publication" },
-  { value: "award", label: "Award", type: "Award" },
 ];
 
 const renderContent = (tabVal: string) => {
   const filterTab = EXPERIENCE_FILTER_TABS.find((tab) => tab.value === tabVal);
-  const experienceArr = filterTab
-    ? experiences.filter((exp) => exp.type === filterTab.type)
-    : experiences;
+  const experienceArr = experiences.filter(
+    (exp) => exp.type === filterTab?.type
+  );
 
   return (
     <div className="mx-auto my-4">
@@ -49,18 +46,11 @@ const renderContent = (tabVal: string) => {
 };
 
 export default function ExperiencePage() {
-  const tabItems = [
-    {
-      value: "all",
-      label: "All",
-      content: renderContent("all"),
-    },
-    ...EXPERIENCE_FILTER_TABS.map((tab) => ({
-      value: tab.value,
-      label: tab.label,
-      content: renderContent(tab.value),
-    })),
-  ];
+  const tabItems = EXPERIENCE_FILTER_TABS.map((tab) => ({
+    value: tab.value,
+    label: tab.label,
+    content: renderContent(tab.value),
+  }));
 
   return (
     <PageContainer
@@ -69,8 +59,8 @@ export default function ExperiencePage() {
     >
       <ResponsiveTabs
         items={tabItems}
-        defaultValue="all"
-        tabsListClassName="grid-cols-3 lg:grid-cols-6"
+        defaultValue="intern"
+        tabsListClassName="grid-cols-2"
       />
     </PageContainer>
   );

@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 
 interface ClientPageWrapperProps {
   children: ReactNode;
+  animate?: boolean;
 }
 
 const pageVariants = {
@@ -22,7 +23,14 @@ const pageVariants = {
   },
 };
 
-export const ClientPageWrapper = ({ children }: ClientPageWrapperProps) => {
+export const ClientPageWrapper = ({
+  children,
+  animate = true,
+}: ClientPageWrapperProps) => {
+  if (!animate) {
+    return <div className="w-full">{children}</div>;
+  }
+
   return (
     <motion.div
       initial="initial"

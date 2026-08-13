@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 
 import PageContainer from "@/components/common/page-container";
-import SkillsCard from "@/components/skills/skills-card";
+import ProjectSkillsPanel from "@/components/skills/project-skills-panel";
+import QualificationsPanel from "@/components/skills/qualifications-panel";
 import { pagesConfig } from "@/config/pages";
-import { skills } from "@/config/skills";
+import { getProjectSkills } from "@/lib/project-skills";
 
 export const metadata: Metadata = {
   title: pagesConfig.skills.metadata.title,
@@ -11,12 +12,17 @@ export const metadata: Metadata = {
 };
 
 export default function SkillsPage() {
+  const projectSkills = getProjectSkills();
+
   return (
     <PageContainer
       title={pagesConfig.skills.title}
       description={pagesConfig.skills.description}
     >
-      <SkillsCard skills={skills} />
+      <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
+        <QualificationsPanel />
+        <ProjectSkillsPanel skills={projectSkills} />
+      </div>
     </PageContainer>
   );
 }
