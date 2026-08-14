@@ -794,7 +794,7 @@ export const Projects: ProjectInterface[] = [
     startDate: new Date("2001-02-08"),
     endDate: new Date("2001-02-08"),
   
-    companyLogoImg: "/timeline/project/cleansedfeedback/main.png",
+    companyLogoImg: "/timeline/project/cleansedFeedback/main.png",
   
     descriptionDetails: {
       paragraphs: [
@@ -872,7 +872,7 @@ export const Projects: ProjectInterface[] = [
 
       {
         type: "image",
-        src: "/timeline/project/cleansedfeedback/문제정의.png",
+        src: "/timeline/project/cleansedFeedback/문제정의.png",
       },
   
       {
@@ -884,12 +884,12 @@ export const Projects: ProjectInterface[] = [
 
       {
         type: "image",
-        src: "/timeline/project/cleansedfeedback/기존연구.png",
+        src: "/timeline/project/cleansedFeedback/기존연구.png",
       },
 
       {
         type: "image",
-        src: "/timeline/project/cleansedfeedback/기존연구와_비교.png",
+        src: "/timeline/project/cleansedFeedback/기존연구와_비교.png",
       },
 
       {
@@ -907,7 +907,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/cleansedfeedback/파이프라인.png",
+        src: "/timeline/project/cleansedFeedback/파이프라인.png",
       },
   
       {
@@ -957,7 +957,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/cleansedfeedback/모델_성능평가.png",
+        src: "/timeline/project/cleansedFeedback/모델_성능평가.png",
       },
   
       {
@@ -975,12 +975,12 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/cleansedfeedback/결과_웹.png",
+        src: "/timeline/project/cleansedFeedback/결과_웹.png",
       },
 
       {
         type: "image",
-        src: "/timeline/project/cleansedfeedback/결과_통계2.png",
+        src: "/timeline/project/cleansedFeedback/결과_통계2.png",
       },
   
       {
@@ -992,13 +992,13 @@ export const Projects: ProjectInterface[] = [
       {
         type: "button",
         label: "Project Presentation",
-        href: "/timeline/project/cleansedfeedback/소융캡디_발표자료_2차.pdf",
+        href: "/timeline/project/cleansedFeedback/소융캡디_발표자료_2차.pdf",
       },
   
       {
         type: "button",
         label: "Paper",
-        href: "/timeline/project/cleansedfeedback/가논문.pdf",
+        href: "/timeline/project/cleansedFeedback/가논문.pdf",
       },
     ],
   },
