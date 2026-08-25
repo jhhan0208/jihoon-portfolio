@@ -24,7 +24,7 @@ export const achievementProjects: AchievementProject[] = [
         title:
           "TermCorrector: Speech-to-Text(STT)에서의 영문 용어 교정 서비스",
         organization: "KCC 2025",
-        url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318661",
+        url: "/projects/termcorrector#publications",
       },
     ],
     awards: [
@@ -32,13 +32,13 @@ export const achievementProjects: AchievementProject[] = [
         id: "kcc-2025-best",
         title: "KCC 2025 학부생/주니어 논문경진대회 학부생부문 최우수상",
         organization: "KCC 2025",
-        url: "/timeline/project/termcorrector/TermCorrector 최우수상.pdf",
+        url: "/projects/termcorrector#awards",
       },
       {
         id: "swcon-excellence",
         title: "경희대학교 소프트웨어융합학과 컨퍼런스 우수상",
         organization: "경희대학교 소프트웨어융합학과",
-        url: "/timeline/project/termcorrector/SW_컨퍼런스_우수상.pdf",
+        url: "/projects/termcorrector#awards",
       },
     ],
   },
@@ -52,7 +52,7 @@ export const achievementProjects: AchievementProject[] = [
         id: "khuda-toy-special",
         title: "2025 KHUDA 7기 토이프로젝트 컨퍼런스 특별상",
         organization: "KHUDA",
-        url: "/timeline/project/나랏말싸미/KHUDA_컨퍼런스_특별상.pdf",
+        url: "/experience/khuda-7th#awards",
       },
     ],
   },
@@ -66,7 +66,7 @@ export const achievementProjects: AchievementProject[] = [
         title:
           "SeeCode:맥락정보 활용한 모바일 접근성 진단 및 코드수정 제안 시스템",
         organization: "KSC 2025",
-        url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12577742",
+        url: "/projects/seecode#publications",
       },
     ],
     awards: [
@@ -74,7 +74,7 @@ export const achievementProjects: AchievementProject[] = [
         id: "ksc-2025-encouragement",
         title: "KSC 2025 학부생/주니어 논문경진대회 학부생부문 장려상",
         organization: "KSC 2025",
-        url: "/timeline/project/seecode/seecode_수상확인서.pdf",
+        url: "/projects/seecode#awards",
       },
     ],
   },

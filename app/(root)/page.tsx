@@ -85,8 +85,9 @@ export default function IndexPage() {
           <div className="flex flex-col mt-5 items-center justify-center sm:flex-row sm:flex-wrap sm:justify-center gap-3">
             <AnimatedText delay={0.6}>
               <Link
-                href={"/resume"}
+                href={"/resume/한지훈_기본_이력서.pdf"}
                 target="_blank"
+                rel="noopener noreferrer"
                 className={cn(buttonVariants({ size: "lg" }))}
                 aria-label="View resume"
               >

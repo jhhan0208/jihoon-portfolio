@@ -7,9 +7,15 @@ interface AchievementCardProps {
   achievement: FeaturedAchievement;
 }
 
+function isExternalUrl(url: string) {
+  return /^https?:\/\//i.test(url);
+}
+
 export default function AchievementCard({
   achievement,
 }: AchievementCardProps) {
+  const external = achievement.url ? isExternalUrl(achievement.url) : false;
+
   const inner = (
     <div className="relative h-full overflow-hidden rounded-lg border bg-background p-4 transition-colors hover:bg-accent hover:text-accent-foreground sm:p-6">
       {achievement.url && (
@@ -40,8 +46,9 @@ export default function AchievementCard({
     return (
       <Link
         href={achievement.url}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(external
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
         className="block h-full"
       >
         {inner}

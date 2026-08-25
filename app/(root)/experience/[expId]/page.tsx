@@ -56,6 +56,10 @@ export default async function ExperienceDetailPage({
     redirect("/experience");
   }
 
+  if (experience.detailsHref) {
+    redirect(experience.detailsHref);
+  }
+
   if (experience.detailLayout === "rich") {
     return (
       <ClientPageWrapper>

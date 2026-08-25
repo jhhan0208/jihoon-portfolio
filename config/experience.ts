@@ -8,8 +8,9 @@ import {
   ContentBlockParagraphs,
   ContentBlockSkills,
 } from "./content-blocks";
-import { professionalExperiences } from "./experiences/experiences";
-import { internExperiences } from "./experiences/interns";
+import { campusActivityExperiences } from "./experiences/campus-activities";
+import { externalActivityExperiences } from "./experiences/external-activities";
+import { internshipExperiences } from "./experiences/internships";
 
 export interface ExperiencePagesInfo {
   title: string;
@@ -71,8 +72,11 @@ export interface ExperienceInterface {
   detailTabs?: ExperienceRichTab[];
   detailBlocks?: ExperienceContentBlock[];
   detailTabBlocks?: ExperienceRichTabBlocks[];
+  /** 자체 상세 페이지 대신 이동할 경로 (예: /projects/seecode#awards) */
+  detailsHref?: string;
 }
 export const experiences: ExperienceInterface[] = [
-  ...internExperiences,
-  ...professionalExperiences,
+  ...internshipExperiences,
+  ...campusActivityExperiences,
+  ...externalActivityExperiences,
 ];

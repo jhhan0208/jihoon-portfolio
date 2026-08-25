@@ -33,7 +33,7 @@ export const Projects: ProjectInterface[] = [
   // termcorrector
   {
     id: "termcorrector",
-    companyName: "TermCorrector",
+    companyName: "TermCorrector 📄 🏆",
     type: "Professional",
     category: ["AI", "Speech Recognition", "Web Service"],
     shortDescription:
@@ -43,7 +43,7 @@ export const Projects: ProjectInterface[] = [
     techStack: ["Python", "Flask", "Whisper", "FastText"],
     startDate: new Date("2024-09-06"),
     endDate: new Date("2024-11-22"),
-    companyLogoImg: "/timeline/project/termcorrector/logo.png",
+    companyLogoImg: "/timeline/Projects/termcorrector/logo.png",
     descriptionDetails: {
       paragraphs: [
         "기존 Speech-to-Text(STT) 서비스는 일반적인 한국어 인식에는 높은 성능을 보이지만, 강의에서 자주 등장하는 영문 전문 용어는 발화자의 외래어 발음 차이로 인해 잘못 변환되는 문제가 있습니다.",
@@ -92,7 +92,7 @@ export const Projects: ProjectInterface[] = [
       },
       {
         type: "image",
-        src: "/timeline/project/termcorrector/intro.png",
+        src: "/timeline/Projects/termcorrector/intro.png",
       },
       {
         type: "paragraphs",
@@ -128,7 +128,7 @@ export const Projects: ProjectInterface[] = [
       },
       {
         type: "image",
-        src: "/timeline/project/termcorrector/main-page.png",
+        src: "/timeline/Projects/termcorrector/main-page.png",
       },
       { type: "heading", text: "System Architecture", level: "h3" },
       {
@@ -139,7 +139,7 @@ export const Projects: ProjectInterface[] = [
       },
       {
         type: "image",
-        src: "/timeline/project/termcorrector/architecture.png",
+        src: "/timeline/Projects/termcorrector/architecture.png",
       },
       { type: "heading", text: "Correction Pipeline", level: "h3" },
       {
@@ -150,7 +150,7 @@ export const Projects: ProjectInterface[] = [
       },
       {
         type: "image",
-        src: "/timeline/project/termcorrector/correction-flow.png",
+        src: "/timeline/Projects/termcorrector/correction-flow.png",
       },
       { type: "heading", text: "Correction Result", level: "h3" },
       {
@@ -161,13 +161,13 @@ export const Projects: ProjectInterface[] = [
       },
       {
         type: "image",
-        src: "/timeline/project/termcorrector/result-page.png",
+        src: "/timeline/Projects/termcorrector/result-page.png",
       },
       {
         type: "image",
-        src: "/timeline/project/termcorrector/result-detail.png",
+        src: "/timeline/Projects/termcorrector/result-detail.png",
       },
-      { type: "heading", text: "📄 Poster & Publication", level: "h2" },
+      { type: "heading", text: "📄 Poster & Publication", level: "h2", id: "publications" },
       {
         type: "paragraphs",
         items: [
@@ -181,7 +181,7 @@ export const Projects: ProjectInterface[] = [
       },
       {
         type: "image",
-        src: "/timeline/project/termcorrector/KCC2025poster.png",
+        src: "/timeline/Projects/termcorrector/KCC2025poster.png",
       },
       {
         type: "button",
@@ -191,23 +191,24 @@ export const Projects: ProjectInterface[] = [
       {
         type: "button",
         label: "논문 PDF 보기",
-        href: "/timeline/project/termcorrector/TermCorrector_논문.pdf",
+        href: "/timeline/Projects/termcorrector/TermCorrector_논문.pdf",
       },
       {
         type: "button",
         label: "논문 포스터 보기",
-        href: "/timeline/project/termcorrector/TermCorrector_포스터.pdf",
+        href: "/timeline/Projects/termcorrector/TermCorrector_포스터.pdf",
       },
-      { type: "heading", text: "🏆 Awards", level: "h2" },
+      { type: "heading", text: "🏆 Awards", level: "h2", id: "awards" },
+      { type: "image", src: "/timeline/Projects/termcorrector/수상사진.jpg" },
       {
         type: "button",
         label: "2024 경희대학교 Swcon Conference 우수상",
-        href: "/timeline/project/termcorrector/SW_컨퍼런스_우수상.pdf",
+        href: "/timeline/Projects/termcorrector/SW_컨퍼런스_우수상.pdf",
       },
       {
         type: "button",
         label: "KCC 2025 학부생부문 최우수상",
-        href: "/timeline/project/termcorrector/TermCorrector 최우수상.pdf",
+        href: "/timeline/Projects/termcorrector/TermCorrector 최우수상.pdf",
       },
     ],
   },
@@ -215,7 +216,7 @@ export const Projects: ProjectInterface[] = [
   // seecode
   {
     id: "seecode",
-    companyName: "SeeCode",
+    companyName: "SeeCode 📄 🏆",
     type: "Professional",
     category: ["AI", "Accessibility", "Developer Tool"],
     shortDescription:
@@ -232,7 +233,7 @@ export const Projects: ProjectInterface[] = [
     startDate: new Date("2001-02-08"),
     endDate: new Date("2001-02-08"),
   
-    companyLogoImg: "/timeline/project/seecode/logo.png",
+    companyLogoImg: "/timeline/Projects/seecode/logo.png",
   
     descriptionDetails: {
       paragraphs: [
@@ -343,7 +344,7 @@ export const Projects: ProjectInterface[] = [
 
       {
         type: "image",
-        src: "/timeline/project/seecode/문제정의.png",
+        src: "/timeline/Projects/seecode/문제정의.png",
       },
 
       {
@@ -355,7 +356,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/seecode/학교문제.png",
+        src: "/timeline/Projects/seecode/학교문제.png",
       },
   
       {
@@ -373,12 +374,12 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/seecode/architecture.png",
+        src: "/timeline/Projects/seecode/architecture.png",
       },
 
       {
         type: "image",
-        src: "/timeline/project/seecode/architecture2.png",
+        src: "/timeline/Projects/seecode/architecture2.png",
       },
   
       {
@@ -396,7 +397,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/seecode/logo.png",
+        src: "/timeline/Projects/seecode/logo.png",
       },
   
       {
@@ -414,7 +415,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/seecode/code-suggestion.png",
+        src: "/timeline/Projects/seecode/code-suggestion.png",
       },
   
       {
@@ -432,17 +433,18 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/seecode/result1.png",
+        src: "/timeline/Projects/seecode/result1.png",
       },
       {
         type: "image",
-        src: "/timeline/project/seecode/result2.png",
+        src: "/timeline/Projects/seecode/result2.png",
       },
   
       {
         type: "heading",
         text: "📄 Poster & Publication",
         level: "h2",
+        id: "publications",
       },
   
       {
@@ -467,21 +469,22 @@ export const Projects: ProjectInterface[] = [
       {
         type: "button",
         label: "논문 PDF 보기",
-        href: "/timeline/project/seecode/seecode_논문.pdf",
+        href: "/timeline/Projects/seecode/seecode_논문.pdf",
       },
   
       {
         type: "button",
         label: "논문 포스터 보기",
-        href: "/timeline/project/seecode/seecode_포스터.pdf",
+        href: "/timeline/Projects/seecode/seecode_포스터.pdf",
       },
   
       {
         type: "heading",
         text: "🏆 Awards & Exhibition",
         level: "h2",
+        id: "awards",
       },
-  
+      { type: "image", src: "/timeline/Projects/seecode/인재패스티벌_사진.jpg" },
       {
         type: "paragraphs",
         items: [
@@ -498,7 +501,7 @@ export const Projects: ProjectInterface[] = [
       {
         type: "button",
         label: "KSC 2025 학부생 논문경진대회 장려상",
-        href: "/timeline/project/seecode/seecode_수상확인서.pdf",
+        href: "/timeline/Projects/seecode/seecode_수상확인서.pdf",
       },
     ],
   },
@@ -525,7 +528,7 @@ export const Projects: ProjectInterface[] = [
     startDate: new Date("2001-02-08"),
     endDate: new Date("2001-02-08"),
   
-    companyLogoImg: "/timeline/project/woodjudge/logo.png",
+    companyLogoImg: "/timeline/Projects/woodjudge/logo.png",
   
     descriptionDetails: {
       paragraphs: [
@@ -650,7 +653,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/woodjudge/problem.png",
+        src: "/timeline/Projects/woodjudge/problem.png",
       },
   
       {
@@ -668,7 +671,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/woodjudge/woodjudge_파이프라인.png",
+        src: "/timeline/Projects/woodjudge/woodjudge_파이프라인.png",
       },
   
       {
@@ -686,7 +689,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/woodjudge/프롬프트.png",
+        src: "/timeline/Projects/woodjudge/프롬프트.png",
       },
   
       {
@@ -704,7 +707,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/woodjudge/retrieval.png",
+        src: "/timeline/Projects/woodjudge/retrieval.png",
       },
   
       {
@@ -722,7 +725,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/woodjudge/evaluation.png",
+        src: "/timeline/Projects/woodjudge/evaluation.png",
       },
   
       {
@@ -740,7 +743,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/woodjudge/result.png",
+        src: "/timeline/Projects/woodjudge/result.png",
       },
   
       {
@@ -759,13 +762,13 @@ export const Projects: ProjectInterface[] = [
       {
         type: "button",
         label: "프로젝트 발표자료",
-        href: "/timeline/project/woodjudge/woodjudge_ppt.pdf",
+        href: "/timeline/Projects/woodjudge/woodjudge_ppt.pdf",
       },
   
       {
         type: "button",
         label: "프로젝트 기획서",
-        href: "/timeline/project/woodjudge/woodjudge_계획서.pdf",
+        href: "/timeline/Projects/woodjudge/woodjudge_계획서.pdf",
       },
     ],
   },
@@ -794,7 +797,7 @@ export const Projects: ProjectInterface[] = [
     startDate: new Date("2001-02-08"),
     endDate: new Date("2001-02-08"),
   
-    companyLogoImg: "/timeline/project/cleansedFeedback/main.png",
+    companyLogoImg: "/timeline/Projects/cleansedFeedback/main.png",
   
     descriptionDetails: {
       paragraphs: [
@@ -872,7 +875,7 @@ export const Projects: ProjectInterface[] = [
 
       {
         type: "image",
-        src: "/timeline/project/cleansedFeedback/문제정의.png",
+        src: "/timeline/Projects/cleansedFeedback/문제정의.png",
       },
   
       {
@@ -884,12 +887,12 @@ export const Projects: ProjectInterface[] = [
 
       {
         type: "image",
-        src: "/timeline/project/cleansedFeedback/기존연구.png",
+        src: "/timeline/Projects/cleansedFeedback/기존연구.png",
       },
 
       {
         type: "image",
-        src: "/timeline/project/cleansedFeedback/기존연구와_비교.png",
+        src: "/timeline/Projects/cleansedFeedback/기존연구와_비교.png",
       },
 
       {
@@ -907,7 +910,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/cleansedFeedback/파이프라인.png",
+        src: "/timeline/Projects/cleansedFeedback/파이프라인.png",
       },
   
       {
@@ -957,7 +960,7 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/cleansedFeedback/모델_성능평가.png",
+        src: "/timeline/Projects/cleansedFeedback/모델_성능평가.png",
       },
   
       {
@@ -975,12 +978,12 @@ export const Projects: ProjectInterface[] = [
   
       {
         type: "image",
-        src: "/timeline/project/cleansedFeedback/결과_웹.png",
+        src: "/timeline/Projects/cleansedFeedback/결과_웹.png",
       },
 
       {
         type: "image",
-        src: "/timeline/project/cleansedFeedback/결과_통계2.png",
+        src: "/timeline/Projects/cleansedFeedback/결과_통계2.png",
       },
   
       {
@@ -992,13 +995,13 @@ export const Projects: ProjectInterface[] = [
       {
         type: "button",
         label: "Project Presentation",
-        href: "/timeline/project/cleansedFeedback/소융캡디_발표자료_2차.pdf",
+        href: "/timeline/Projects/cleansedFeedback/소융캡디_발표자료_2차.pdf",
       },
   
       {
         type: "button",
         label: "Paper",
-        href: "/timeline/project/cleansedFeedback/가논문.pdf",
+        href: "/timeline/Projects/cleansedFeedback/가논문.pdf",
       },
     ],
   },

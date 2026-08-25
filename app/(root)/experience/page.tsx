@@ -28,8 +28,17 @@ const EXPERIENCE_FILTER_TABS: {
   label: string;
   type: ValidExperienceType;
 }[] = [
-  { value: "intern", label: "Intern", type: "Intern" },
-  { value: "experience", label: "Experience", type: "Experience" },
+  { value: "internships", label: "Internships", type: "Internships" },
+  {
+    value: "campus-activities",
+    label: "Campus Activities",
+    type: "Campus Activities",
+  },
+  {
+    value: "external-activities",
+    label: "External Activities",
+    type: "External Activities",
+  },
 ];
 
 const renderContent = (tabVal: string) => {
@@ -59,8 +68,8 @@ export default function ExperiencePage() {
     >
       <ResponsiveTabs
         items={tabItems}
-        defaultValue="intern"
-        tabsListClassName="grid-cols-2"
+        defaultValue="internships"
+        tabsListClassName="grid-cols-1 sm:grid-cols-3"
       />
     </PageContainer>
   );

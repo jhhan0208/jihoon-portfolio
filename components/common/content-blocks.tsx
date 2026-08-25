@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Icons } from "@/components/common/icons";
-import { Button } from "@/components/ui/button";
 import ChipContainer from "@/components/ui/chip-container";
 import { ContentBlock } from "@/config/content-blocks";
 import { CONTENT_HEADING_SCROLL_OFFSET } from "@/lib/content-toc";
@@ -130,21 +129,15 @@ export default function ContentBlocks({
           case "button":
             return (
               <div key={index} className="mb-7 flex justify-start">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="rounded-lg w-full sm:w-auto"
-                  asChild
+                <Link
+                  href={block.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-flex h-9 items-center justify-center gap-2 rounded-md border bg-muted pl-3 pr-6 text-sm font-medium text-foreground transition-colors hover:bg-muted/80"
                 >
-                  <Link
-                    href={block.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {block.label}
-                    <Icons.chevronRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                  <Icons.externalLink className="h-5 w-5 shrink-0 rounded-full border bg-background p-1 text-muted-foreground" />
+                  {block.label}
+                </Link>
               </div>
             );
 

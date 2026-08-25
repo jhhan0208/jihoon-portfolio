@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CSSProperties, Fragment } from "react";
 
 import { Icons } from "@/components/common/icons";
@@ -10,6 +11,10 @@ import { cn } from "@/lib/utils";
 
 const GRID_CLASS =
   "lg:grid lg:grid-cols-[minmax(0,1fr)_4.5rem_minmax(0,1fr)] lg:gap-x-4";
+
+function isExternalUrl(url: string) {
+  return /^https?:\/\//i.test(url);
+}
 
 function LinkConnector({
   orientation = "horizontal",
@@ -74,15 +79,25 @@ function AchievementCard({
   );
 
   if (item.url) {
+    const external = isExternalUrl(item.url);
+
+    if (external) {
+      return (
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(cardClassName, "block")}
+        >
+          {content}
+        </a>
+      );
+    }
+
     return (
-      <a
-        href={item.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn(cardClassName, "block")}
-      >
+      <Link href={item.url} className={cn(cardClassName, "block")}>
         {content}
-      </a>
+      </Link>
     );
   }
 

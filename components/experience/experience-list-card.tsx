@@ -80,7 +80,7 @@ export default function ExperienceListCard({
             className="w-full rounded-lg sm:w-auto"
             asChild
           >
-            <Link href={`/experience/${experience.id}`}>
+            <Link href={experience.detailsHref ?? `/experience/${experience.id}`}>
               View Details
               <Icons.chevronRight className="ml-2 h-4 w-4" />
             </Link>

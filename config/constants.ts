@@ -75,7 +75,27 @@ export type ValidSkills =
   | "Chrome Extension"
   | "Selenium"
   | "KcELECTRA"
-  | "Hugging Face";
+  | "Hugging Face"
+  | "Data Analysis"
+  | "Machine Learning"
+  | "Technical Research"
+  | "Redash"
+  | "Data Visualization"
+  | "Natural Language Processing"
+  | "Large Language Models"
+  | "RAG"
+  | "Transformer"
+  | "GPT"
+  | "LLM"
+  | "Deep Learning"
+  | "Accessibility"
+  | "AI"
+  | "Excel"
+  | "Data Cleansing"
+  | "Data Analysis"
+  | "Data Automation"
+  | "Power Automate"
+  | "SAP BW";
 
 export type ValidCategory =
   | "Full Stack"
@@ -99,11 +119,9 @@ export type ValidCategory =
 export type ValidExpType = "Personal" | "Professional";
 
 export type ValidExperienceType =
-  | "Intern"
-  | "Project"
-  | "Experience"
-  | "Award"
-  | "Publication";
+  | "Internships"
+  | "Campus Activities"
+  | "External Activities";
 
 export type ValidPages =
   | "home"
