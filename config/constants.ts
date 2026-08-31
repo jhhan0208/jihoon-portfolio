@@ -95,7 +95,17 @@ export type ValidSkills =
   | "Data Analysis"
   | "Data Automation"
   | "Power Automate"
-  | "SAP BW";
+  | "SAP BW"
+  | "Generative AI"
+  | "AWS PartyRock"
+  | "Prompt Engineering"
+  | "AI Agents"
+  | "Service Planning"
+  | "HTML"
+  | "CSS"
+  | "JavaScript"
+  | "AI-Assisted Development"
+  | "Rapid Prototyping";
 
 export type ValidCategory =
   | "Full Stack"

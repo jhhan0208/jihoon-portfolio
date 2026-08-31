@@ -51,25 +51,15 @@ export function buildTocSections(
   headingIds: Map<number, string>
 ): TocSection[] {
   const sections: TocSection[] = [];
-  let current: TocSection | null = null;
 
   blocks.forEach((block, index) => {
     if (block.type !== "heading") return;
+    if (block.level === "h3") return;
 
     const id = headingIds.get(index);
     if (!id) return;
 
-    if (block.level === "h3") {
-      if (current) {
-        current.children.push({ id, text: block.text });
-      } else {
-        sections.push({ id, text: block.text, children: [] });
-      }
-      return;
-    }
-
-    current = { id, text: block.text, children: [] };
-    sections.push(current);
+    sections.push({ id, text: block.text, children: [] });
   });
 
   return sections;

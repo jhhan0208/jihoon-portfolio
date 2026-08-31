@@ -78,6 +78,20 @@ export const achievementProjects: AchievementProject[] = [
       },
     ],
   },
+  {
+    id: "ai-spark-bootcamp",
+    name: "AI SPARK 부트캠프",
+    period: "26.08",
+    publications: [],
+    awards: [
+      {
+        id: "ai-spark-bootcamp-award",
+        title: "AI SPARK 부트캠프 아이디어톤 대상",
+        organization: "NXT CLOUD",
+        url: "/experience/ai-spark-bootcamp#awards",
+      },
+    ],
+  },
 ];
 
 export type FeaturedAchievement = AchievementItem & {
