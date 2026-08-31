@@ -105,7 +105,8 @@ export type ValidSkills =
   | "CSS"
   | "JavaScript"
   | "AI-Assisted Development"
-  | "Rapid Prototyping";
+  | "Rapid Prototyping"
+  | "NLP";
 
 export type ValidCategory =
   | "Full Stack"
@@ -124,7 +125,11 @@ export type ValidCategory =
   | "LLM"
   | "RAG"
   | "NLP"
-  | "Chrome Extension";
+  | "Chrome Extension"
+  | "Data Analysis"
+  | "Machine Learning"
+  | "Data Visualization"
+  | "NLP";
 
 export type ValidExpType = "Personal" | "Professional";
 

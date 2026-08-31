@@ -1,6 +1,5 @@
 import { MainNav } from "@/components/common/main-nav";
-import { ModeToggle } from "@/components/common/mode-toggle";
-import { SiteFooter } from "@/components/common/site-footer";
+import { ModeToggle } from "@/components/common/mode-toggle";import { SiteFooter } from "@/components/common/site-footer";
 import { routesConfig } from "@/config/routes";
 
 interface MarketingLayoutProps {
@@ -22,8 +21,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
           </nav>
         </div>
       </header>
-      <main className="container flex-1">{children}</main>
-      <SiteFooter />
+      <main className="container flex-1">{children}</main>      <SiteFooter />
     </div>
   );
 }

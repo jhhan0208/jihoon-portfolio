@@ -74,7 +74,7 @@ function AchievementCard({
   const cardClassName = cn(
     "relative w-full rounded-lg border border-border bg-background p-3 sm:p-4",
     item.url &&
-      "transition-colors hover:border-primary/40 hover:bg-muted/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+      "hover:border-primary/40 hover:bg-muted/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
     className
   );
 

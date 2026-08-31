@@ -1005,6 +1005,1158 @@ export const Projects: ProjectInterface[] = [
       },
     ],
   },
+
+  // fertility-rate-analysis
+  {
+    id: "fertility-rate-analysis",
+    companyName: "국가별 지표를 활용한 출산율 분석",
+    type: "Personal",
+    category: [
+      "Data Analysis",
+      "Machine Learning",
+      "Data Visualization",],
+    shortDescription:
+      "국가별 사회·경제 지표를 활용해 출산율 관련 요인을 분석하고, 한국과 유사한 국가를 탐색한 머신러닝·통계 분석 프로젝트",
+
+    websiteLink: "",
+    githubLink:
+      "https://github.com/jhhan0208/Predict_Fertility_Rate-based_on_other_factors",
+
+    techStack: [
+      "Python",
+      "Data Analysis",
+      "Machine Learning",
+      "Data Visualization",
+    ],
+
+    // 정확한 수행 기간 확인 필요
+    startDate: new Date("2024-11-08"),
+    endDate: new Date("2024-11-24"),
+
+    companyLogoImg:
+      "/timeline/Projects/fertility-rate-analysis/logo2.png",
+
+    descriptionDetails: {
+      paragraphs: [
+        "경제적 지원 중심의 저출산 정책을 데이터 관점에서 검토하기 위해 국가별 출산율과 사회·경제 지표를 결합하고, 회귀 모델·PCA·K-means·독립표본 t-test를 적용한 데이터 분석 프로젝트입니다.",
+      ],
+      bullets: [
+        "130개 국가의 출산율 및 7개 사회·경제 지표 통합",
+        "7개 회귀 모델을 활용한 출산율 예측 성능 비교",
+        "PCA를 통한 문해율·의료 수준 변수 통합 및 다중공선성 완화",
+        "K-means를 활용한 한국과 유사한 국가 탐색",
+        "독립표본 t-test를 통한 GDP 수준별 출산율 차이 분석",
+      ],
+    },
+
+    pagesInfoArr: [],
+
+    detailBlocks: [
+      {
+        type: "image",
+        src: "/timeline/Projects/fertility-rate-analysis/상단_사진2.png",
+        alt: "GDP 상위 국가와 하위 국가의 출산율 분포 비교",
+      },
+      {
+        type: "skills",
+        title: "Tech Stack",
+        items: [
+          "Python",
+          "Data Analysis",
+          "Machine Learning",
+          "Data Visualization",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Description",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "한국의 저출산 문제에 대응하기 위한 정부 정책이 경제적 지원에 집중되어 있다는 점에서 출발하여, 출산율과 관련된 사회·경제적 요인을 데이터로 분석한 개인 프로젝트입니다.",
+          "국가별 출산율과 GDP뿐 아니라 비만율, 성비, 문해율, 의료 수준, 부양비, 여성 경제활동 참가율을 결합하여 총 130개 국가의 분석 데이터를 구성했습니다.",
+          "분석은 세 가지 가설을 중심으로 진행했습니다. 먼저 여러 회귀 모델을 통해 출산율과 관련성이 높은 요인을 탐색하고, 다음으로 K-means를 이용해 한국과 사회적 조건이 유사한 국가를 찾았습니다. 마지막으로 GDP 수준에 따른 출산율 차이가 통계적으로 나타나는지 독립표본 t-test로 검토했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "서로 다른 출처에서 수집한 8개 국가별 데이터셋 통합",
+          "국가명 불일치, 자료형 변환, 결측치와 이상치 처리",
+          "상관계수와 VIF를 활용한 독립변수 간 다중공선성 점검",
+          "PCA·회귀·앙상블·군집화·가설검정을 결합한 단계별 분석",
+          "분석 결과를 바탕으로 경제적 지원 이외의 저출산 정책 방향 제안",
+        ],
+      },
+      {
+        type: "button",
+        label: "Jupyter Notebook",
+        href: "https://github.com/jhhan0208/Predict_Fertility_Rate-based_on_other_factors/blob/main/main.ipynb",
+      },
+
+      {
+        type: "heading",
+        text: "Data Collection & Preprocessing",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "출산율에 영향을 줄 가능성이 있는 요인을 폭넓게 비교하기 위해 출산율, GDP, 비만율, 성비, 문해율, 의료 수준, 부양비, 여성 경제활동 참가율 데이터를 수집했습니다.",
+          "각 데이터셋은 포함된 국가와 국가명 표기 방식이 달랐기 때문에 공통 국가명을 기준으로 병합하고, 분석에 사용할 수 있도록 수치형 데이터로 변환했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "Listly를 이용해 국가별 지표가 포함된 웹 데이터를 수집하고 Excel 파일로 저장",
+          "통화 기호·천 단위 구분자·백분율 기호를 제거하고 데이터를 수치형으로 변환",
+          "각기 다른 출처의 데이터셋을 국가명을 기준으로 병합",
+          "South Korea·Korea 등 서로 다르게 표기된 국가명을 공통 명칭으로 정규화",
+          "결측치가 있는 국가를 제외하고 130개 국가와 8개 속성으로 최종 데이터셋 구성",
+          "한국의 낮은 출산율은 데이터 오류가 아닌 분석 가치가 있는 이상치로 판단해 유지",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Hypothesis 1",
+        level: "h2",
+      },
+      {
+        type: "heading",
+        text: "출산율과 관련된 사회적 요인은 무엇인가?",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "경제적 요인을 제외한 사회적 지표들이 출산율과 어떤 관계를 보이는지 확인하고, 여러 회귀 모델의 예측 성능과 선형 모델의 계수를 비교하여 주요 변수를 탐색했습니다.",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Multicollinearity & PCA",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "독립변수 간 상관관계와 VIF를 확인한 결과 문해율과 의료 수준의 상관계수가 약 0.79로 상대적으로 높게 나타났습니다.",
+          "두 변수를 그대로 사용하는 대신 PCA를 적용하여 하나의 변수인 literacy_healthcare로 축소했습니다. 첫 번째 주성분은 기존 두 변수 분산의 약 89%를 설명했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "StandardScaler를 이용한 독립변수 표준화",
+          "상관계수 히트맵과 VIF를 활용한 다중공선성 점검",
+          "문해율과 의료 수준을 하나의 주성분으로 결합",
+          "PCA 적용 전후의 독립변수 간 상관관계 비교",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Regression Model Comparison",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "Linear Regression부터 부스팅 기반 모델까지 총 7개 회귀 모델을 동일한 학습·테스트 데이터에 적용하고 MAE, MSE, RMSE와 R²를 비교했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "LinearRegression·Ridge·Lasso를 활용한 선형 모델 비교",
+          "VotingRegressor·BaggingRegressor를 이용한 앙상블 모델 평가",
+          "AdaBoostRegressor·GradientBoostingRegressor를 이용한 부스팅 모델 평가",
+          "Linear·Ridge·Lasso 회귀계수의 절댓값 평균을 이용해 변수 영향력 비교",
+          "노트북의 단일 데이터 분할 실험에서 AdaBoost와 Gradient Boosting이 0.9 이상의 R² 기록",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/fertility-rate-analysis/1.png",
+        alt: "출산율 관련 변수의 회귀계수 중요도 분석 결과",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "분석 결과 출산율과 관련성이 크게 나타난 변수는 문해율·의료 수준을 결합한 literacy_healthcare와 부양비였습니다.",
+          "특히 부양비와 출산율 사이에서 관찰된 관계를 바탕으로, 경제활동인구가 일과 육아를 병행할 때 발생하는 부담을 완화하는 정책이 필요하다는 방향을 제안했습니다.",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Hypothesis 2",
+        level: "h2",
+      },
+      {
+        type: "heading",
+        text: "한국과 유사한 상황에 놓인 국가는 어디인가?",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "첫 번째 분석에서 출산율과 관련성이 높게 나타난 의료 수준과 부양비를 기준으로 국가를 군집화하고, 한국과 유사한 지표를 가진 국가를 탐색했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "클러스터 수를 2개부터 5개까지 변경하며 Silhouette Score 비교",
+          "Silhouette Score가 가장 높게 나타난 3개 군집을 최종 K값으로 선택",
+          "의료 수준과 부양비를 기준으로 K-means 군집화 수행",
+          "Pairwise Distance를 이용해 한국과 가까운 국가 탐색",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/fertility-rate-analysis/2.png",
+        alt: "의료 수준과 부양비를 기준으로 한 국가별 K-means 군집화 결과",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "한국은 의료 수준과 부양비가 상대적으로 높은 군집에 포함되었습니다. 거리 계산 결과 한국과 유사하게 나타난 국가로 이스라엘, 아이슬란드, 룩셈부르크와 아일랜드를 확인했습니다.",
+          "이를 통해 단순히 출산율이 높은 국가를 참고하는 대신, 한국과 사회적 조건이 유사한 국가의 육아 지원 및 노동 정책을 비교하는 접근을 제안했습니다.",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Hypothesis 3",
+        level: "h2",
+      },
+      {
+        type: "heading",
+        text: "경제력이 높은 국가일수록 출산율도 높은가?",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "경제적 지원 중심의 저출산 정책을 검토하기 위해 국가를 1인당 GDP 순으로 나누고, GDP가 높은 집단과 낮은 집단 사이의 출산율 차이를 독립표본 t-test로 분석했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "159개 국가를 1인당 GDP 순으로 정렬",
+          "GDP 상위 80개국과 하위 79개국을 서로 독립적인 표본으로 구성",
+          "양측검정과 두 방향의 단측검정을 각각 수행",
+          "표본 내에서 GDP가 높은 국가의 출산율이 더 높다는 근거를 확인하지 못함",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/fertility-rate-analysis/3.png",
+        alt: "GDP 상위 국가와 하위 국가의 출산율 분포 비교",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "분석에서는 GDP가 높은 국가 집단의 출산율이 오히려 낮게 나타나는 경향을 확인했습니다.",
+          "이 결과를 바탕으로 경제적 지원을 축소해야 한다고 해석하기보다, 현금성 지원과 함께 육아휴직의 실질적 활용, 보육시설 접근성, 일과 육아의 병행 가능성을 개선하는 정책이 필요하다고 제안했습니다.",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Conclusion",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "국가별 데이터를 활용한 분석을 통해 저출산 문제가 단일 경제 지표만으로 설명되기 어렵다는 점을 확인했습니다.",
+          "회귀 분석에서는 문해율·의료 수준·부양비가 출산율과 관련된 주요 요인으로 나타났고, 군집 분석을 통해 한국과 유사한 사회적 조건을 가진 국가를 탐색했습니다. 통계 검정에서는 높은 GDP가 높은 출산율로 직접 연결되지 않는 경향을 확인했습니다.",
+          "이를 바탕으로 저출산 정책은 금전적 지원에만 집중하기보다 경제활동인구가 육아를 병행할 수 있도록 노동·보육 환경을 함께 개선하는 방향으로 확장할 필요가 있다는 결론을 도출했습니다.",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Limitations & Improvements",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "본 프로젝트는 국가 단위의 횡단면 데이터를 활용한 탐색적 분석으로, 변수 사이의 인과관계를 직접 입증하지는 않습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "서로 다른 출처와 조사 시점의 데이터를 결합해 지표 간 기준 연도가 일치하지 않을 가능성",
+          "단일 Train·Test Split의 R²만으로 모델의 일반화 성능을 판단하기 어려우므로 교차검증 필요",
+          "모델별 하이퍼파라미터 탐색과 반복 실험을 통한 성능 안정성 검증 필요",
+          "GDP 상·하위 집단의 등분산 여부를 먼저 검정하고 결과에 따라 Welch t-test를 적용할 필요",
+          "국가별 문화·주거·보육 정책처럼 데이터에 포함되지 않은 교란 요인을 추가할 필요",
+          "시계열 또는 패널 데이터를 활용해 정책 시행 전후의 변화와 인과관계를 분석할 필요",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Repository",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "저장소에는 전체 분석 과정이 기록된 Jupyter Notebook과 국가별 원본 Excel 데이터, 데이터 출처를 설명하는 참고 이미지가 포함되어 있습니다.",
+        ],
+      },
+      {
+        type: "button",
+        label: "View on GitHub",
+        href: "https://github.com/jhhan0208/Predict_Fertility_Rate-based_on_other_factors",
+      },
+    ],
+  },
+
+  // 2018/19 EPL Data Analysis
+  {
+    id: "epl-18-19-analysis",
+    companyName: "2018/19 EPL 데이터 분석",
+    type: "Personal",
+    category: [],
+    shortDescription:
+      "2018/19 EPL 선수·경기·팀 데이터를 활용해 개인 기록, 심판 성향과 팀 성과 요인을 분석한 데이터 시각화 프로젝트",
+
+    websiteLink: "",
+    githubLink:
+      "https://github.com/jhhan0208/Project_EPL_18_19_analysis",
+
+    techStack: [
+      "Python",
+      "Data Analysis",
+      "Data Visualization",
+    ],
+
+    // 저장소에 정확한 수행 기간이 명시되어 있지 않아 placeholder 사용
+    startDate: new Date("2024-05-15"),
+    endDate: new Date("2024-02-27"),
+
+    companyLogoImg:
+      "/timeline/Projects/epl_18_19_analysis/logo.png",
+
+    descriptionDetails: {
+      paragraphs: [
+        "FootyStats의 2018/19 EPL 데이터를 활용하여 선수 기록 순위, 심판별 카드 성향과 팀 성적에 관련된 지표를 분석하고 시각화한 개인 데이터 분석 프로젝트입니다.",
+      ],
+      bullets: [
+        "선수별 득점·도움·태클 등 주요 기록의 공동 순위 처리 및 출력",
+        "심판별 경기당 카드 수를 계산하여 판정 성향 비교",
+        "상관계수 히트맵을 활용해 리그 순위와 관련성이 높은 팀 지표 탐색",
+        "경기당 승점과 득실 차를 활용한 20개 팀의 시즌 성과 시각화",
+      ],
+    },
+
+    pagesInfoArr: [],
+
+    detailBlocks: [
+      {
+        type: "image",
+        src: "/timeline/Projects/epl_18_19_analysis/상단사진.png",
+        alt: "상단사진",
+      },
+      {
+        type: "skills",
+        title: "Tech Stack",
+        items: [
+          "Python",
+          "Data Analysis",
+          "Data Visualization",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Description",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "평소 관심이 있던 축구 데이터를 직접 분석해보기 위해 2018/19 시즌 잉글랜드 프리미어리그를 주제로 선정했습니다.",
+          "해당 시즌은 맨체스터 시티와 리버풀이 각각 98점과 97점을 기록하며 우승 경쟁을 펼친 시즌입니다. 선수 개인 기록을 시각화하는 것에서 출발해 심판의 카드 부여 성향과 팀의 리그 성적에 관련된 지표까지 분석 범위를 확장했습니다.",
+          "FootyStats에서 제공하는 리그·경기·선수·팀 단위 CSV 데이터를 Pandas로 가공하고, Matplotlib과 Seaborn을 활용해 분석 결과를 시각화했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "선수·경기·팀·리그 단위로 구성된 2018/19 EPL CSV 데이터 활용",
+          "분석 목적에 맞는 열 선택, 정렬, 집계 및 파생변수 생성",
+          "공동 순위를 반영한 선수 기록 순위표 생성",
+          "경기별 카드 데이터를 심판 단위로 집계하여 성향 비교",
+          "팀별 지표의 상관계수 분석과 시즌 성과 시각화",
+        ],
+      },
+      {
+        type: "button",
+        label: "Jupyter Notebook",
+        href: "https://github.com/jhhan0208/Project_EPL_18_19_analysis/blob/main/main.ipynb",
+      },
+
+      {
+        type: "heading",
+        text: "Project Goals",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "프로젝트는 공식 리그 사이트에서 일반적으로 제공하는 기록 순위를 직접 재현하고, 기존 순위표만으로는 확인하기 어려운 심판과 팀 단위의 특징을 추가로 분석하는 것을 목표로 진행했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "득점·도움·태클·클린시트 등 선수별 기록을 순위표 형태로 재구성",
+          "심판별 카드 부여 빈도를 이용해 상대적으로 엄격한 심판 탐색",
+          "팀의 최종 리그 순위와 관련성이 높은 공격·수비 지표 분석",
+          "맨체스터 시티와 리버풀을 비롯한 20개 팀의 시즌 성과 비교",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Data Collection",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "FootyStats에서 제공하는 2018/19 EPL 데이터를 사용했습니다. 데이터는 분석 단위에 따라 League, Matches, Players, Teams의 네 개 파일로 구성되어 있습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "League CSV: 전체 경기 수와 리그 평균 득점 등 시즌 단위 지표",
+          "Matches CSV: 380경기의 홈·원정 팀, 심판, 득점과 카드 기록",
+          "Players CSV: 570여 명 선수의 소속 팀, 국적, 포지션과 개인 기록",
+          "Teams CSV: 20개 팀의 승점, 득실, 점유율, 슈팅과 클린시트 기록",
+        ],
+      },
+      {
+        type: "button",
+        label: "FootyStats Dataset",
+        href: "https://footystats.org/download-stats-csv",
+      },
+
+      {
+        type: "heading",
+        text: "Player Ranking",
+        level: "h2",
+      },
+      {
+        type: "heading",
+        text: "선수별 주요 기록 순위표",
+        level: "h3",
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/epl_18_19_analysis/기록순위.png",
+        alt: "EPL 공식 사이트의 선수 기록 순위 화면",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "EPL 공식 사이트의 통계 페이지를 참고하여 선수 기록을 ‘순위·선수명·소속 클럽·국적·기록’ 형태로 정리했습니다.",
+          "어떤 기록 열을 입력하더라도 동일한 형식의 순위표를 생성할 수 있도록 organize_data 함수를 작성했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "선수명·소속 클럽·국적과 분석 대상 기록을 Players 데이터에서 추출",
+          "선택한 기록을 기준으로 내림차순 정렬",
+          "동일한 기록을 가진 선수에게 같은 순위를 부여하는 공동 순위 로직 구현",
+          "함수의 입력 열을 변경해 득점·도움·태클 등 여러 기록에 재사용할 수 있도록 구성",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/epl_18_19_analysis/내기록순위.png",
+        alt: "EPL 공식 사이트의 선수 기록 순위 화면",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "득점 기록에 함수를 적용한 결과 사디오 마네, 모하메드 살라와 피에르에메릭 오바메양이 각각 22골로 공동 1위에 해당하는 것을 확인했습니다.",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Referee Analysis",
+        level: "h2",
+      },
+      {
+        type: "heading",
+        text: "경기당 카드 수를 활용한 심판 성향 비교",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "심판이 담당한 경기에서 홈·원정 팀에 부여한 옐로카드와 레드카드를 합산하고, 이를 담당 경기 수로 나누어 심판별 경기당 평균 카드 수를 계산했습니다.",
+          "경기당 카드 수를 판정 성향을 살펴보기 위한 간단한 대리지표로 사용하여 어떤 심판이 상대적으로 카드를 자주 부여했는지 비교했습니다.",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/epl_18_19_analysis/산출방식.png",
+        alt: "심판별 경기당 카드 수 산출 방식",
+      },
+      {
+        type: "bullets",
+        items: [
+          "380경기의 심판명과 홈·원정 팀 카드 기록 추출",
+          "Dictionary를 활용해 심판별 전체 카드 수와 담당 경기 수 누적",
+          "전체 카드 수를 담당 경기 수로 나누어 경기당 평균 카드 수 계산",
+          "계산 결과를 DataFrame으로 변환하고 평균 카드 수 기준으로 정렬",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/epl_18_19_analysis/심판결과.png",
+        alt: "Mike Dean의 EPL 통산 레드카드 100장 기록 관련 자료",
+        width: 300
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "분석 결과 Mike Dean이 경기당 약 4.97장으로 가장 높은 카드 수를 기록했습니다. Roger East가 4.40장, Craig Pawson이 약 3.81장으로 뒤를 이었습니다.",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/epl_18_19_analysis/기사.png",
+        alt: "Mike Dean의 EPL 통산 레드카드 100장 기록 관련 자료"
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "Mike Dean은 EPL에서 최초로 레드카드 100장을 부여한 심판으로 알려져 있어, 데이터에서 나타난 높은 카드 부여 빈도와 실제 심판 성향에 관한 기록을 함께 비교했습니다.",
+        ],
+      },
+
+
+      {
+        type: "heading",
+        text: "Team Performance Analysis",
+        level: "h2",
+      },
+      {
+        type: "heading",
+        text: "팀의 리그 성과와 관련된 요인 분석",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "맨체스터 시티와 리버풀이 다른 팀보다 높은 성과를 기록한 요인을 살펴보기 위해 리그 순위와 관련성이 있을 것으로 예상되는 팀별 지표를 선정하고 상관계수를 분석했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "리그 순위·경기당 승점·득점·실점·득실 차·클린시트 데이터 선택",
+          "평균 점유율·전체 슈팅·유효 슈팅 등 경기력 관련 지표 추가",
+          "Seaborn Heatmap을 활용해 변수 간 상관계수 시각화",
+          "리그 순위와 실점처럼 낮을수록 좋은 변수를 동일한 방향으로 변환",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Direction Normalization",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "원래 리그 순위와 실점은 값이 낮을수록 좋은 지표인 반면, 승점·득점·득실 차 등은 높을수록 좋은 지표입니다.",
+          "상관계수를 직관적으로 해석할 수 있도록 리그 순위를 ‘20 - 기존 순위’로, 실점을 음수 값으로 변환하여 모든 지표가 높을수록 좋은 성과를 의미하도록 방향을 통일했습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "new_league_position = 20 - league_position",
+          "new_goals_conceded = -goals_conceded",
+          "변환한 지표를 기준으로 상관계수 행렬 재계산",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Correlation Results",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "변환된 리그 순위와 가장 높은 상관관계를 보인 지표는 경기당 승점과 득실 차였습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "경기당 승점과 변환된 리그 순위의 상관계수: 약 0.954",
+          "득실 차와 변환된 리그 순위의 상관계수: 약 0.944",
+          "득점과 변환된 리그 순위의 상관계수: 약 0.900",
+          "실점 변환값과 변환된 리그 순위의 상관계수: 약 0.906",
+        ],
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "경기당 승점은 리그 순위를 직접 결정하는 누적 승점에서 파생된 지표이므로 높은 상관관계가 자연스럽게 나타납니다. 따라서 실질적인 팀 경기력 비교에서는 공격과 수비 성과를 함께 반영하는 득실 차를 주요 축으로 함께 활용했습니다.",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Team Performance Map",
+        level: "h3",
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/epl_18_19_analysis/산점도.png",
+        alt: "산점도 그래프"
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "경기당 승점과 득실 차를 각각 좌표축으로 설정하고 20개 팀을 산점도에 배치했습니다. 점의 색상에는 변환된 리그 순위를 반영하여 각 팀의 성과를 한 화면에서 비교할 수 있도록 구성했습니다.",
+          "시각화 결과 맨체스터 시티와 리버풀이 다른 팀들과 분리된 최상위 영역에 위치하면서, 해당 시즌의 치열했던 양강 구도가 뚜렷하게 나타났습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "X축: 경기당 승점",
+          "Y축: 시즌 득실 차",
+          "점의 색상: 최종 리그 순위",
+          "각 좌표에 팀명을 표시하여 20개 팀의 상대적 위치 비교",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Data Interpretation",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "프로젝트를 수행하며 단순히 그래프를 생성하는 것보다 데이터가 수집된 시점과 각 지표의 정확한 정의를 파악하는 과정이 중요하다는 점을 확인했습니다.",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/epl_18_19_analysis/raw.png",
+        alt: "EPL 원본 데이터의 다양한 항목",
+      },
+      {
+        type: "bullets",
+        items: [
+          "원본 데이터에서 분석에 필요한 열을 선별하고 목적에 맞게 가공하는 데 많은 시간이 필요함을 경험",
+          "동일한 명칭의 지표라도 데이터 제공처마다 집계 대상과 정의가 다를 수 있음을 발견",
+          "정확한 분석을 위해 데이터의 기준 시점과 메타데이터를 함께 확인해야 한다는 점을 학습",
+          "선수 이적 이후 공식 사이트의 현재 소속 팀 정보가 과거 시즌 데이터와 달라질 수 있음을 확인(Ex_ Eden Hazard)",
+        ],
+      },
+      {
+        type: "image",
+        src: "/timeline/Projects/epl_18_19_analysis/아자르.png",
+        alt: "선수 이적에 따라 현재 소속 팀이 변경된 사례",
+      },
+      {
+        type: "heading",
+        text: "Limitations & Improvements",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "본 프로젝트는 데이터 분석과 시각화의 기초를 익히기 위한 탐색적 분석으로, 상관관계를 특정 요인이 승리의 원인이라는 인과관계로 해석하지 않았습니다.",
+        ],
+      },
+      {
+        type: "bullets",
+        items: [
+          "경기당 승점은 최종 순위와 직접 연결된 지표이므로 독립적인 경기력 요인으로 해석하기 어려움",
+          "리그에 참여한 팀이 20개뿐이므로 상관계수의 안정성을 일반화하기 어려움",
+          "심판별 담당 경기 수가 달라 소수 경기만 담당한 심판의 평균값이 크게 변할 수 있음",
+          "옐로카드와 레드카드의 가중치를 동일하게 합산하여 카드의 심각도를 반영하지 못함",
+          "심판 성향 분석에 경기 강도·더비 여부·팀 반칙 수 등의 변수가 포함되지 않음",
+          "팀별 시즌 집계 데이터만 사용해 경기별 변화와 홈·원정 효과를 분석하지 못함",
+        ],
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "향후에는 심판별 최소 담당 경기 수를 설정하고 카드 종류에 가중치를 부여하는 방식으로 성향 지표를 개선할 수 있습니다. 또한 경기 단위 데이터를 활용해 홈·원정, 상대 팀 수준과 경기 시점 등을 포함한 회귀 분석으로 확장할 수 있습니다.",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "What I Learned",
+      },
+      {
+        type: "bullets",
+        items: [
+          "Pandas를 활용한 CSV 데이터 탐색·정렬·집계 및 파생변수 생성",
+          "함수화를 통해 여러 선수 기록에 재사용할 수 있는 순위 처리 로직 구현",
+          "Matplotlib과 Seaborn을 활용한 순위표·산점도·히트맵 시각화",
+          "상관계수의 방향을 올바르게 해석하기 위한 변수 전처리",
+          "데이터의 최신성과 지표 정의가 분석 결과에 미치는 영향 이해",
+          "관심 분야의 질문을 데이터 분석 문제로 구체화하고 결과를 해석하는 경험",
+        ],
+      },
+
+      {
+        type: "heading",
+        text: "Repository",
+        level: "h3",
+      },
+      {
+        type: "paragraphs",
+        items: [
+          "저장소에는 전체 분석 과정과 해석을 기록한 Jupyter Notebook, 2018/19 시즌의 리그·경기·선수·팀 CSV 데이터 및 참고 이미지가 포함되어 있습니다.",
+        ],
+      },
+      {
+        type: "button",
+        label: "View on GitHub",
+        href: "https://github.com/jhhan0208/Project_EPL_18_19_analysis",
+      },
+    ],
+  },
+
+  // Learning Archive
+{
+  id: "learning-archive",
+  companyName: "Learning Archive",
+  type: "Personal",
+  category: [],
+  shortDescription:
+    "데이터베이스·통계·운영체제·딥러닝·3D 데이터처리와 데이터 자격증 학습 내용을 주제별로 정리한 개인 학습 아카이브",
+
+  websiteLink: "",
+  githubLink: "https://github.com/jhhan0208",
+
+  techStack: [
+    "SQL",
+    "Excel",
+    "Data Analysis",
+    "Machine Learning",
+    "Deep Learning",
+  ],
+
+  // 학습 기간이 자료별로 다르고 정확한 전체 기간이 명시되지 않아 placeholder 사용
+  startDate: new Date("2001-02-08"),
+  endDate: new Date("2001-02-08"),
+
+  companyLogoImg:
+    "/timeline/Projects/learning_archive/logo.png",
+
+  descriptionDetails: {
+    paragraphs: [
+      "전공 수업과 개인 학습 과정에서 공부한 데이터베이스·통계·운영체제·딥러닝·3D 데이터처리 및 데이터 자격증 내용을 GitHub와 Notion에 주제별로 정리한 개인 학습 아카이브입니다.",
+    ],
+    bullets: [
+      "Oracle SQL 실습과 데이터베이스 설계 단계 정리",
+      "Excel을 활용한 신뢰구간·가설검정·ANOVA·회귀분석 계산 실습",
+      "Operating System Concepts를 기반으로 한 운영체제 15개 장 정리",
+      "딥러닝 기초 이론·최적화 기법·CNN 논문 및 이미지 분류 실습 정리",
+      "카메라 기하·Point Cloud·3D Reconstruction 학습 내용 정리",
+      "ADsP·SQLD 개념과 기출문제·오답을 시험 범위별로 정리",
+    ],
+  },
+
+  pagesInfoArr: [],
+
+  detailBlocks: [
+
+    {
+      type: "image",
+      src: "/timeline/Projects/learning_archive/logo.png",
+      alt: "상단사진",
+    },
+
+    {
+      type: "skills",
+      title: "Learning Areas",
+      items: [
+        "SQL",
+        "Excel",
+        "Data Analysis",
+        "Machine Learning",
+        "Deep Learning",
+      ],
+    },
+
+    {
+      type: "heading",
+      text: "Description",
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "전공 수업과 자격증 준비, 개인 스터디에서 학습한 내용을 일회성 필기로 남기지 않고 이후 프로젝트와 학습에 다시 활용할 수 있도록 정리한 아카이브입니다.",
+        "GitHub에는 직접 작성한 코드·실습 파일·PDF 학습 자료를 보관하고, Notion에는 개념 간 연결과 학습 진도, 논문 및 참고자료를 주제별 페이지로 구조화했습니다.",
+        "데이터 분석과 AI뿐 아니라 데이터베이스·운영체제·3D 데이터처리 등 개발자로서 필요한 기반 지식을 함께 축적하고 있습니다.",
+      ],
+    },
+    {
+      type: "bullets",
+      items: [
+        "개념을 읽는 데서 그치지 않고 SQL·Excel·Python 실습으로 재현",
+        "방대한 학습 범위를 주제와 챕터 단위로 분리해 탐색 가능하도록 구성",
+        "틀렸거나 헷갈린 내용을 별도로 기록하여 반복 학습에 활용",
+        "논문·공식 문서·교재·강의와 실습 결과를 한곳에서 연결",
+        "이후 프로젝트에서 필요한 개념을 빠르게 다시 찾을 수 있는 개인 지식 저장소 구축",
+      ],
+    },
+
+    // {
+    //   type: "heading",
+    //   text: "Archive Overview",
+    // },
+    // {
+    //   type: "bullets",
+    //   items: [
+    //     "Database: Oracle SQL 문법 실습 및 데이터베이스 설계",
+    //     "Statistics: Excel을 활용한 통계 추정·검정과 회귀분석",
+    //     "Computer Science: 프로세스·동시성·메모리·파일 시스템 등 운영체제",
+    //     "Artificial Intelligence: 딥러닝 학습 과정과 주요 CNN 논문",
+    //     "3D Vision: 카메라 기하·Point Cloud·3D Reconstruction",
+    //     "Certification: ADsP와 SQLD 개념·기출·오답 정리",
+    //   ],
+    // },
+
+    {
+      type: "heading",
+      text: "Database",
+      level: "h2",
+    },
+    {
+      type: "heading",
+      text: "Oracle Database Study",
+      level: "h3",
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "Oracle Live SQL을 이용해 관계형 데이터베이스의 기본 문법부터 테이블 생성과 제약조건까지 직접 실행한 SQL 실습 저장소입니다.",
+        "SQL 문법 실습 이후에는 데이터베이스를 구축하는 과정을 개념적·논리적·물리적 설계 단계로 나누어 정리했습니다.",
+      ],
+    },
+    {
+      type: "bullets",
+      items: [
+        "SELECT 문을 활용한 기본 데이터 조회",
+        "WHERE·ORDER BY를 활용한 데이터 제한 및 정렬",
+        "문자·숫자·날짜 등 단일 행 함수 사용",
+        "여러 테이블의 데이터를 결합하는 JOIN 실습",
+        "GROUP BY·HAVING과 집계 함수를 활용한 그룹 분석",
+        "단일 행·다중 행 서브쿼리 작성",
+        "INSERT·UPDATE·DELETE 등 DML 실습",
+        "테이블 생성·수정·삭제와 데이터 타입 설정",
+        "Primary Key·Foreign Key·Unique·Not Null 등 제약조건 적용",
+        "개념적·논리적·물리적 데이터베이스 설계 과정 정리",
+      ],
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "각 실습 주제에는 SQL 코드뿐 아니라 학습 내용을 점검할 수 있는 질문지를 함께 구성하여 문법의 동작 방식과 사용 목적을 반복해서 확인할 수 있도록 했습니다.",
+      ],
+    },
+    {
+      type: "button",
+      label: "Oracle Database Study",
+      href: "https://github.com/jhhan0208/Study_Oracle_DataBase",
+    },
+
+    {
+      type: "heading",
+      text: "Statistics",
+      level: "h2",
+    },
+    {
+      type: "heading",
+      text: "Statistical Analysis with Excel",
+      level: "h3",
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "응용통계학에서 다룬 추정과 가설검정 과정을 Excel 수식으로 직접 계산하고, 통계량과 검정 결과가 산출되는 과정을 단계별로 확인한 실습 저장소입니다.",
+        "통계 프로그램의 결과를 그대로 사용하는 대신 표본 통계량, 검정통계량, 임계값과 신뢰구간을 직접 계산하며 각 분석 방법의 원리를 학습했습니다.",
+      ],
+    },
+    {
+      type: "bullets",
+      items: [
+        "모평균에 대한 양측 신뢰구간 계산",
+        "신뢰구간을 활용한 양측 가설검정",
+        "단측 가설검정과 임계영역 계산",
+        "단일 모집단 비율에 대한 단측 가설검정",
+        "Pooled Proportion을 활용한 두 모집단 비율 검정",
+        "카이제곱 검정과 기대도수 계산",
+        "집단 간 평균 차이를 비교하는 ANOVA Table 작성",
+        "표본을 이용한 모수 추정",
+        "독립변수와 종속변수 사이의 선형회귀 계산",
+      ],
+    },
+    {
+      type: "button",
+      label: "Statistical Analysis Study",
+      href: "https://github.com/jhhan0208/Study_various_statistical_analysis",
+    },
+
+    {
+      type: "heading",
+      text: "Computer Science",
+      level: "h2",
+    },
+    {
+      type: "heading",
+      text: "Operating System Study",
+      level: "h3",
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "Operating System Concepts 10판을 바탕으로 운영체제의 주요 개념을 15개 장으로 나누어 정리한 저장소입니다.",
+        "교재의 내용을 그대로 옮기기보다 각 개념을 이해하기 쉬운 표현과 사례로 다시 설명하고, 서로 연결되는 주제를 CPU·메모리·I/O 관리 영역으로 묶었습니다.",
+      ],
+    },
+    {
+      type: "bullets",
+      items: [
+        "컴퓨터 시스템 구성과 운영체제의 역할",
+        "운영체제 서비스·시스템 콜·커널 구조",
+        "프로세스 상태·PCB·프로세스 간 통신",
+        "스레드와 멀티코어 프로그래밍 및 동시성",
+        "CPU 스케줄링 알고리즘과 평가 기준",
+        "동기화 도구·동기화 문제와 데드락",
+        "메인 메모리 관리와 가상 메모리",
+        "대용량 저장장치와 I/O 시스템",
+        "파일 시스템 인터페이스·구현·내부 구조",
+      ],
+    },
+    {
+      type: "button",
+      label: "Operating System Study",
+      href: "https://github.com/jhhan0208/Study_Operating-System",
+    },
+
+    {
+      type: "heading",
+      text: "Artificial Intelligence",
+      level: "h2",
+    },
+    {
+      type: "heading",
+      text: "Deep Learning Notes",
+      level: "h3",
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "딥러닝 모델의 학습 원리와 성능 개선 기법을 강의 단위로 정리하고, 주요 논문과 이미지 분류 실습을 연결한 Notion 학습 페이지입니다.",
+      ],
+    },
+    {
+      type: "bullets",
+      items: [
+        "딥러닝의 개념과 전체 학습 파이프라인",
+        "Loss Function과 Gradient 기반 학습 원리",
+        "Dataset 구성과 Backpropagation",
+        "Optimizer·Regularization·Learning Rate 설정",
+        "Activation Function별 특징과 선택 기준",
+        "논문을 읽고 구조·실험·결과를 정리하는 방법",
+        "AlexNet 논문 ‘ImageNet Classification with Deep Convolutional Neural Networks’ 정리",
+        "CIFAR-10 이미지 분류 모델 구현 자료 연결",
+      ],
+    },
+    {
+      type: "button",
+      label: "Deep Learning Notes",
+      href: "https://app.notion.com/p/16f0bd7d529e80d8a080f7a090cf41a9#abdefd70d4084248a5e47e1ddee1aa99",
+    },
+
+    {
+      type: "heading",
+      text: "3D Data Processing",
+      level: "h2",
+    },
+    {
+      type: "heading",
+      text: "3D Vision & Point Cloud Notes",
+      level: "h3",
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "2D 영상으로부터 3차원 공간을 해석하고 재구성하는 과정과 Point Cloud 처리 기법을 강의 주제별로 정리한 Notion 학습 페이지입니다.",
+        "카메라의 투영 원리에서 시작해 두 영상의 대응 관계, 3차원 포인트 처리와 여러 이미지로부터 구조를 복원하는 과정까지 단계적으로 구성했습니다.",
+      ],
+    },
+    {
+      type: "bullets",
+      items: [
+        "Homography를 활용한 영상 간 평면 변환",
+        "RANSAC을 활용한 이상치 제거와 모델 추정",
+        "Camera Geometry와 카메라 투영 관계",
+        "Stereo Vision을 활용한 깊이 정보 추정",
+        "Point Cloud의 구조와 기본 처리 방법",
+        "Point Cloud Filtering과 노이즈 제거",
+        "3D Descriptor를 활용한 특징 표현",
+        "Point Cloud Clustering과 객체 영역 분리",
+        "Registration을 활용한 서로 다른 Point Cloud 정합",
+        "RGB-D 기반 3D Reconstruction",
+        "여러 RGB 영상으로부터 수행하는 3D Reconstruction",
+        "Structure from Motion과 Bundle Adjustment",
+      ],
+    },
+    {
+      type: "button",
+      label: "3D Data Processing Notes",
+      href: "https://app.notion.com/p/3D-1ae0bd7d529e807c95aaffaf6c93f23a",
+    },
+
+    {
+      type: "heading",
+      text: "Certification",
+      level: "h2",
+    },
+    {
+      type: "heading",
+      text: "ADsP Study Notes",
+      level: "h3",
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "ADsP 시험 범위를 데이터 이해·분석 기획·데이터 분석의 세 영역으로 나누고, 강의 진도와 개념 학습 상태를 함께 관리한 Notion 페이지입니다.",
+      ],
+    },
+    {
+      type: "bullets",
+      items: [
+        "데이터와 정보의 정의 및 데이터베이스의 특징",
+        "데이터 가치와 데이터 사이언스의 역할",
+        "분석 과제 정의와 분석 마스터플랜 수립",
+        "분석 거버넌스와 분석 조직·성숙도",
+        "기초 통계·확률분포·추정과 가설검정",
+        "회귀분석·분산분석·다변량 분석",
+        "데이터 마이닝과 분류·군집 분석",
+        "시험에 등장하는 주요 R 스크립트와 실행 결과 해석",
+      ],
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "각 파트의 학습 범위와 진도를 표로 관리하고, 강령과 Part 1·2·3 세부 페이지를 통해 개념을 시험 영역별로 다시 확인할 수 있도록 구성했습니다.",
+      ],
+    },
+    {
+      type: "button",
+      label: "ADsP Study Notes",
+      href: "https://app.notion.com/p/ADSP-3640bd7d529e80999c32ffe1300a4dca",
+    },
+
+    {
+      type: "heading",
+      text: "SQLD Study Notes",
+      level: "h3",
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "SQLD 자격증 준비 과정에서 데이터 모델링과 SQL 문법을 시험 범위별로 정리하고, 기출문제와 오답을 반복 학습할 수 있도록 구성한 Notion 페이지입니다.",
+      ],
+    },
+    {
+      type: "bullets",
+      items: [
+        "엔터티·속성·관계와 데이터 모델링의 이해",
+        "정규화·반정규화와 데이터 모델의 성능",
+        "데이터 모델과 SQL의 관계",
+        "SELECT·WHERE·GROUP BY·HAVING 등 SQL 기본 문법",
+        "JOIN·서브쿼리·집합 연산자·윈도우 함수 등 SQL 활용",
+        "DML·TCL·DDL·DCL 등 관리 구문",
+        "59회·60회 기출문제 풀이 및 핵심 내용 정리",
+        "개념 부족·암기 부족·고난도 문제를 유형별로 분리한 오답 관리",
+        "다시 풀어 정답을 맞힌 문제와 반복 학습이 필요한 문제 구분",
+      ],
+    },
+    {
+      type: "paragraphs",
+      items: [
+        "개념 정리에는 기출문제에서 반복적으로 출제된 내용을 별도로 표시하고, 암기가 부족한 내용과 헷갈리는 문제를 분리해 시험 직전에 우선순위별로 복습할 수 있도록 했습니다.",
+      ],
+    },
+    {
+      type: "button",
+      label: "SQLD Study Notes",
+      href: "https://app.notion.com/p/SQLD-36c0bd7d529e806894d0dc190c01315e",
+    },
+
+    {
+      type: "heading",
+      text: "Repository Links",
+    },
+    {
+      type: "button",
+      label: "Oracle Database Study",
+      href: "https://github.com/jhhan0208/Study_Oracle_DataBase",
+    },
+    {
+      type: "button",
+      label: "Statistical Analysis Study",
+      href: "https://github.com/jhhan0208/Study_various_statistical_analysis",
+    },
+    {
+      type: "button",
+      label: "Operating System Study",
+      href: "https://github.com/jhhan0208/Study_Operating-System",
+    },
+    {
+      type: "button",
+      label: "Deep Learning Notes",
+      href: "https://app.notion.com/p/16f0bd7d529e80d8a080f7a090cf41a9#abdefd70d4084248a5e47e1ddee1aa99",
+    },
+    {
+      type: "button",
+      label: "3D Data Processing Notes",
+      href: "https://app.notion.com/p/3D-1ae0bd7d529e807c95aaffaf6c93f23a",
+    },
+    {
+      type: "button",
+      label: "ADsP Study Notes",
+      href: "https://app.notion.com/p/ADSP-3640bd7d529e80999c32ffe1300a4dca",
+    },
+    {
+      type: "button",
+      label: "SQLD Study Notes",
+      href: "https://app.notion.com/p/SQLD-36c0bd7d529e806894d0dc190c01315e",
+    },
+  ],
+},
 ];
 
 export const featuredProjects = Projects.slice(0, 3);

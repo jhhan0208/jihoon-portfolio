@@ -21,12 +21,6 @@ export const SocialLinks: SocialInterface[] = [
     link: "https://www.linkedin.com/in/namanbarkiya",
   },
   {
-    name: "Twitter",
-    username: "@namanbarkiya",
-    icon: Icons.twitter,
-    link: "https://twitter.com/namanbarkiya",
-  },
-  {
     name: "Gmail",
     username: "Jihoon Han",
     icon: Icons.gmail,

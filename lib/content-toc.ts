@@ -2,6 +2,17 @@ import { ContentBlock } from "@/config/content-blocks";
 
 export const CONTENT_HEADING_SCROLL_OFFSET = 15;
 
+export function scrollToHeadingId(
+  id: string,
+  behavior: ScrollBehavior = "smooth"
+) {
+  const element = document.getElementById(id);
+  if (!element) return false;
+
+  element.scrollIntoView({ behavior, block: "start" });
+  return true;
+}
+
 export interface TocChildItem {
   id: string;
   text: string;

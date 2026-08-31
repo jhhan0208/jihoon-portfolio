@@ -17,7 +17,7 @@ export default function AchievementCard({
   const external = achievement.url ? isExternalUrl(achievement.url) : false;
 
   const inner = (
-    <div className="relative h-full overflow-hidden rounded-lg border bg-background p-4 transition-colors hover:bg-accent hover:text-accent-foreground sm:p-6">
+    <div className="relative h-full overflow-hidden rounded-lg border bg-background p-4 sm:p-6">
       {achievement.url && (
         <Icons.externalLink
           size={28}

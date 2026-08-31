@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { Icons } from "@/components/common/icons";
-import { TocSection, getAllTocIds, CONTENT_HEADING_SCROLL_OFFSET } from "@/lib/content-toc";
+import { TocSection, getAllTocIds, scrollToHeadingId, CONTENT_HEADING_SCROLL_OFFSET } from "@/lib/content-toc";
 import { cn } from "@/lib/utils";
 
 interface ContentPageTocProps {
@@ -44,15 +44,7 @@ export default function ContentPageToc({ sections }: ContentPageTocProps) {
   }, [sections]);
 
   const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (!element) return;
-
-    const top =
-      element.getBoundingClientRect().top +
-      window.scrollY -
-      CONTENT_HEADING_SCROLL_OFFSET;
-
-    window.scrollTo({ top, behavior: "smooth" });
+    scrollToHeadingId(id);
     setActiveId(id);
   };
 

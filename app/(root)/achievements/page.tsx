@@ -18,6 +18,7 @@ export default function AchievementsPage() {
     <PageContainer
       title={pagesConfig.achievements.title}
       description={pagesConfig.achievements.description}
+      animate={false}
     >
       <div className="mx-auto my-0">
         <AchievementsPanel />

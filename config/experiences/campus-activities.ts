@@ -128,7 +128,7 @@ export const campusActivityExperiences: ExperienceInterface[] = [
     ],
     skills: [
       "Python",
-      "Natural Language Processing",
+      "NLP",
       "Machine Learning",
       "Large Language Models",
       "RAG",

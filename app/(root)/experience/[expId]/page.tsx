@@ -61,11 +61,7 @@ export default async function ExperienceDetailPage({
   }
 
   if (experience.detailLayout === "rich") {
-    return (
-      <ClientPageWrapper>
-        <ExperienceRichDetail experience={experience} />
-      </ClientPageWrapper>
-    );
+    return <ExperienceRichDetail experience={experience} />;
   }
 
   const tabItems = [
