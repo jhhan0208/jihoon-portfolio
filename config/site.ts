@@ -14,10 +14,7 @@ export const siteConfig = {
   },
   ogImage:
     "https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767384721/naman_portfolio_og_image.png",
-  iconIco:
-    "/favicon.ico",
-  logoIcon:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357294/assets/naman-logo.png",
+  favicon: "/favicon.ico",
   keywords: [
     "Jihoon Han",
     "AI & Software Engineer",
