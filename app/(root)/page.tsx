@@ -40,7 +40,7 @@ export default function IndexPage() {
     image: siteConfig.ogImage,
     jobTitle: siteConfig.jobTitle,
     description: siteConfig.bio,
-    sameAs: [siteConfig.links.github],
+    sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
   };
 
   return (
@@ -92,6 +92,22 @@ export default function IndexPage() {
                 aria-label="View resume"
               >
                 <Icons.post className="w-4 h-4 mr-2" /> Resume
+              </Link>
+            </AnimatedText>
+            <AnimatedText delay={0.7}>
+              <Link
+                href={siteConfig.links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({
+                    variant: "outline",
+                    size: "lg",
+                  })
+                )}
+                aria-label="Visit LinkedIn profile"
+              >
+                <Icons.linkedin className="w-4 h-4 mr-2" /> LinkedIn
               </Link>
             </AnimatedText>
             <AnimatedText delay={0.8}>

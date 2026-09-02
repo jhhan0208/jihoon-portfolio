@@ -9,6 +9,8 @@ export const siteConfig = {
   url: "https://nbarkiya.xyz",
   links: {
     github: "https://github.com/jhhan0208",
+    linkedin:
+      "https://www.linkedin.com/in/%EC%A7%80%ED%9B%88-%ED%95%9C-4845211a6/",
     youtube: "https://www.youtube.com/@123-o5y5e",
     templateRepo: "https://github.com/jhhan0208/jihoon-portfolio",
   },
