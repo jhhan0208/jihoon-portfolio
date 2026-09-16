@@ -2,7 +2,7 @@
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
 
-const RESUME_PDF_PATH = "/resume/한지훈_기본_이력서.pdf";
+const RESUME_PDF_PATH = "/resume/Jihoon_Han_Resume.pdf";
 
 export default function ResumePage() {
   useEffect(() => {
